@@ -1,0 +1,2246 @@
+$white: #ffffff;
+$black: #000000;
+$darkgray: #1d1d1b;
+$purple: #010628;
+$violet:#F93DF9;
+$darkViolet:#d500d5;
+$blue: #3FA9F5;
+
+@font-face {
+  font-family: 'BlinkerBold';
+  src: url("../fonts/BlinkerBold.ttf"); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'BlinkerExtraLight';
+  src: url("../fonts/BlinkerExtraLight.ttf"); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'BlinkerSemiBold';
+  src: url("../fonts/BlinkerSemiBold.ttf"); /* IE9 Compat Modes */
+}
+
+$font-size: 16;
+$max-width: 1600px;
+//MEDIAS
+$max: 1600px;
+$lap: 1400px;
+$lg: 1200px;
+$md: 850px;
+$sm: 580px;
+$xs: 400px;
+
+//FUNCTIONS
+@function pxtorem($px) {
+  @return #{$px/$font-size}rem;
+}
+
+@function col($n, $t: 18) {
+  @return #{(($n * 100) / $t)}#{"%"};
+}
+
+@mixin h1($color: initial, $scale: 1) {
+  font-family: "BlinkerBold";
+  font-size: pxtorem(60 * $scale);
+  color: $color;
+  margin: 0;
+  font-weight: normal;
+  letter-spacing: 1px;
+  @media screen and (max-width: $lap) {
+    font-size: pxtorem(30 * $scale);
+  }
+  @media screen and (max-width: $md) {
+    font-size: pxtorem(28 * $scale);
+  }
+  @media screen and (max-width: $sm) {
+    font-size: pxtorem(24 * $scale);
+  }
+}
+
+h1 {
+  @include h1();
+  text-transform: uppercase;
+  color: $white;
+}
+
+@mixin h2($color: initial, $scale: 1) {
+  font-family: BlinkerSemiBold;
+  font-size: pxtorem(36 * $scale);
+  color: $color;
+  margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
+  @media screen and (max-width: $lap) {
+    font-size: pxtorem(30 * $scale);
+  }
+  @media screen and (max-width: $md) {
+    font-size: pxtorem(28 * $scale);
+  }
+  @media screen and (max-width: $sm) {
+    font-size: pxtorem(24 * $scale);
+  }
+}
+span{
+  color: $violet !important;
+}
+h2 {
+  @include h2();
+  color: $white;
+}
+
+@mixin h3($color: initial, $scale: 1) {
+  font-family: museo700;
+  font-size: pxtorem(40 * $scale);
+  color: $color;
+  margin: 0;
+  font-weight: normal;
+
+  @media screen and (max-width: $md) {
+    font-size: pxtorem(28 * $scale);
+  }
+  @media screen and (max-width: $sm) {
+    font-size: pxtorem(24 * $scale);
+  }
+}
+
+h3 {
+  @include h3();
+}
+
+@mixin p($color: initial, $scale: 1) {
+  font-family: "BlinkerExtraLight";
+  font-size: pxtorem(20 * $scale);
+  color: $color;
+  margin: 0;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 2;
+  @media screen and (max-width: $md) {
+    font-size: pxtorem(16 * $scale);
+  }
+}
+
+p {
+  @include p();
+  color: $white;
+}
+
+p.especial{
+  font-family: 'BlinkerExtraLight';
+}
+
+@mixin button($bg) {
+  background-color: $darkViolet;
+  font-family: "BlinkerSemiBold";
+  font-size: 18px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: $white;
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  margin: auto;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  &:hover {
+    transition: all 0.3s ease;
+  }
+}
+
+.button {
+  @include button($darkViolet);
+}
+
+@mixin button2($bg) {
+  background: $bg;
+  font-family: "BlinkerBold";
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: $white;
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  border:1px solid  $violet;
+  margin: auto;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  &:hover {
+    transition: all 0.3s ease;
+    background: darken($bg, 8%);
+  }
+  &:active {
+    background: darken($bg, 25%);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.text {
+  overflow: hidden;
+}
+
+.underline {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+
+  .underlineChild {
+    display: block;
+    width: 0;
+    height: 15px;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    z-index: -1;
+    @media screen and (max-width: $md) {
+      height: 8px;
+      bottom: 2px;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  position: relative;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: col(18);
+  padding:0 col(1);
+  &.scrolldown{
+    transform: translateY(0);
+  }
+  &.contactnav {
+    background-color: $white;
+    .inner {
+      .left {
+        .logo {
+          width: 150px;
+          img{
+            width: 150px;
+          }
+        }
+      }
+      .right {
+        p {
+          transition: all 0.5s ease;
+          color: $darkgray;
+          &:after {
+            background: $darkgray;
+          }
+          &:hover {
+            &:before {
+              background: $darkgray;
+            }
+            &:after {
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $md) {
+    display: none;
+  }
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $max-width;
+    margin: auto;
+    height: 100px;
+    .right {
+      display: flex;
+      .logo {
+        width: 50px;
+        margin-right: 100px;
+      }
+      p {
+        transition: all 0.5s ease;
+        margin: 0 25px;
+        color: $white;
+        position: relative;
+        @media screen and (max-width: $lg) {
+          margin: 0 10px;
+        }
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 3px;
+          width: 0;
+          transition: width 0s ease, background 0.5s ease;
+        }
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          height: 3px;
+          width: 0;
+          background: $white;
+          transition: width 0.5s ease;
+        }
+        &:hover {
+          &:before {
+            width: 100%;
+            background: $white;
+            transition: width 0.5s ease;
+          }
+          &:after {
+            width: 100%;
+            background: transparent;
+            transition: all 0s ease;
+          }
+        }
+      }
+    }
+  }
+  &.activo {
+    transition: all 0.5s ease;
+    background-color: transparent;
+    .inner {
+      .left {
+        .logo {
+          svg {
+            .st0 {
+              transition: all 0.5s ease;
+              fill: $purple;
+            }
+          }
+        }
+      }
+      .right {
+        p {
+          transition: all 0.5s ease;
+          color: $white;
+          &:after {
+            background: $white;
+          }
+          &:hover {
+            &:before {
+              background: $white;
+            }
+            &:after {
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.responsivemenu {
+  display: none;
+  @media screen and (max-width: $md) {
+    display: block;
+  }
+}
+
+.burguer {
+  display: none;
+  @media screen and (max-width: $md) {
+    display: flex;
+  }
+  box-shadow: -1px 1px 20px -9px rgba(0, 0, 0, 0.69);
+  position: fixed;
+  right: 10%;
+  top: 5%;
+  z-index: 99999;
+  width: 60px;
+  height: 60px;
+  background-color: $white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  .cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    > div {
+      transition: all 0.5s ease;
+      width: 30px;
+      height: 2px;
+      background-color: $purple;
+      transform-origin: 1px center;
+      &:nth-child(1) {
+        transform: rotate(0deg);
+      }
+      &:nth-child(2) {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(0deg);
+      }
+    }
+  }
+  &.active {
+
+    box-shadow: none;
+    .cont {
+      > div {
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  right: 0%;
+  top: 0%;
+  z-index: 99998;
+  width: 50vw;
+  height: 100vh;
+  z-index: 99998;
+  transform-origin: center center;
+  transform: scale(0, 1);
+  transition: all 0.5s ease;
+  background-color: $purple;
+  &.active {
+    transition: all 0.5s ease;
+    transform: scale(1, 1);
+    > div {
+      p {
+        transition: opacity 0.5s ease;
+        transition-delay: 0.5s;
+        opacity: 1;
+      }
+    }
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > div {
+    text-align: center;
+    p {
+      margin-bottom: 30px;
+      opacity: 0;
+    }
+  }
+}
+
+.logoanim{
+  width:300px;
+  position: absolute;
+  right: col(3);
+  top: 0;
+  @media screen and (max-width: $md) {
+    position: relative;
+    right: initial;
+    margin: auto;
+  }
+}
+
+.sectiontest {
+  width: col(18);
+  padding: col(1);
+  height: 100vh;
+  background-color:$purple;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  z-index: 1;
+  position: relative;
+  gap: 50px;
+  @media screen and (max-width: $lap) {
+   height: auto;
+  }
+  @media screen and (max-width: $md) {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap:0;
+  }
+  .texto{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    >div{
+      width: 10px;
+      height: 3px;
+      background-color: $violet;
+    }
+  }
+  .companiesleft{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0 0 0;
+    @media screen and (max-width: $lap) {
+      margin: 10px 0 0 0;
+    }
+    @media screen and (max-width: $sm) {
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+    }
+    img{
+      width: 100px;
+      @media screen and (max-width: $sm) {
+        display: block;
+        margin: auto;
+      }
+    }
+    .apple{
+      width: 50px;
+    }
+  }
+  .companiesright{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    >div{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      &:first-of-type{
+        margin-bottom: 15px;
+      }
+    }
+    @media screen and (max-width: $sm) {
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+    }
+    img{
+      width: 100px;
+      @media screen and (max-width: $sm) {
+        display: block;
+        margin: auto;
+      }
+    }
+    .apple{
+      width: 50px;
+    }
+  }
+  .topleft{
+    //background-color: #73ab3c;
+    align-self: center;
+    @media screen and (max-width: $md) {
+      text-align: center;
+    }
+    @media screen and (max-width: $lap) {
+      align-self: center;
+    }
+    @media screen and (max-width: $md) {
+      grid-row: 3;
+      margin: 25px 0;
+    }
+    h2{
+      @include h2($white,1.2);
+      span{
+        color: $violet;
+      }
+    }
+    h1{
+      @include h1($white,1.5);
+      span{
+        color: $violet
+      }
+      @media screen and (max-width: $max) {
+        @include h1($white,1);
+      }
+    }
+    .button{
+      @include button2($violet);
+      border-color: $violet;
+      margin: 15px 0 15px 0;
+      font-size: 20px;
+      @media screen and (max-width: $md) {
+        margin:15px auto 15px auto;
+      }
+    }
+  }
+  .topright{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (max-width: $md) {
+      grid-row: 2;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+    .avatares{
+      //width: 450px;
+      @media screen and (max-width: $lap) {
+        width: 450px;
+      }
+      @media screen and (max-width: $md) {
+        width: 400px;
+      }
+    }
+  }
+  .purpleline{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    width: 90vw;
+    height: 8px;
+    background-color: #F93DF9;
+    border-radius: 10px;
+    margin: auto;
+    @media screen and (max-width: $max) {
+      top: -10px;
+    }
+    @media screen and (max-width: $md) {
+      top: -210px;
+      width: 80vw;
+      display: none;
+    }
+  }
+  .bottomleft{
+    //background-color: #b88888;
+    width: 60%;
+    text-align: center;
+    position: relative;
+    //display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @media screen and (max-width: $lap) {
+      width: 80%;
+    }
+    @media screen and (max-width: $md) {
+      width: 100%;
+    }
+    .companies{
+      width: 350px;
+      margin: 40px auto 0 auto;
+      @media screen and (max-width: $md) {
+        grid-template-columns: repeat(3,1fr);
+        width: 100%;
+      }
+    }
+    .austin{
+      display: flex;
+      justify-content: center;
+      .pin{
+        width: 25px;
+        margin-right: 15px;
+      }
+    }
+    p{
+      &:nth-last-of-type(1){
+        @include p ($white,.9)
+      }
+    }
+  }
+  .bottomright{
+    width: 80%;
+    justify-self: center;
+    flex-direction: column;
+    justify-content: space-around;
+    .texto{
+      margin-bottom: 50px;
+      margin-top: 10px;
+      @media screen and (max-width: $lap) {
+        margin-bottom: 40px;
+      }
+      @media screen and (max-width: $md) {
+        margin-bottom: 25px;
+        text-align: center;
+      }
+    }
+    @media screen and (max-width: $lap) {
+      width: 100%;
+    }
+    @media screen and (max-width: $md) {
+      grid-row: 4;
+      margin: 25px 0;
+    }
+  }
+
+}
+
+.brands{
+  width: col(18);
+  padding: col(1);
+  background-color: $purple;
+  position: relative;
+  display: flex;
+  z-index: 1;
+  height: 100vh;
+  @media screen and (max-width: $lg) {
+    flex-direction: column;
+    height: auto;
+  }
+  .left,.right{
+    position: relative;
+    width: col(9);
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: start;
+    transition: all .5s ease;
+    @media screen and (max-width: $lap) {
+      justify-content: flex-start;
+    }
+    @media screen and (max-width: $lg) {
+      width: col(18);
+    }
+    h1{
+      text-transform: capitalize;
+      color: $violet;
+      transition: all .5s ease;
+    }
+    h1,p,.line{
+      z-index: 1 ;
+    }
+    .cont{
+      z-index: 1;
+      //height: 220px;
+      @media screen and (max-width: $lg) {
+        height: auto;
+      }
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      background: rgb(194,23,194);
+      background: linear-gradient(270deg, rgb(164, 19, 164) 0%, rgba(249,61,249,1) 100%);
+      opacity: 0;
+      transition: all .5s ease;
+      border-radius: 25px 0 25px 25px;
+    }
+    &:hover{
+      h1{
+        transition: all .5s ease;
+        color: $white;
+      }
+      &::before{
+        opacity: 1;
+        transition: all .5s ease;
+      }
+    }
+  }
+  .line{
+    width: 100%;
+    height: 2px;
+    background-color: $white;
+    margin: 15px 0;
+  }
+}
+
+.section2 {
+  width: col(18);
+  padding: 0 col(1);
+  height: 100vh;
+  padding-top: 100px;
+  background-color:$purple;
+  @media screen and (max-width: $lap) {
+    height: auto;
+    padding: col(1) 0;
+  }
+  @media screen and (max-width: $md) {
+    padding-top: 150px;
+  }
+  h1{
+    text-align: center;
+  }
+  .avatars{
+    width: col(15);
+    margin: 20px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    @media screen and (max-width: $md) {
+      flex-direction: column;
+    }
+    #cursor{
+      width: 100px;
+      position: absolute;
+      bottom: 0;
+      opacity: 1;
+      transition: all .5s ease;
+    }
+    @keyframes cursoranim {
+      from {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+      to {
+
+        transform: scale(1);
+      }
+    }
+    .first-image{
+      left: 10%;
+      animation: cursoranim .5s linear 1s infinite;
+      animation-fill-mode: forwards;
+      @media screen and (max-width: $md) {
+        left: initial;
+        right: 20%;
+        top: 24%;
+      }
+    }
+    .second-image{
+      left: 50%;
+      animation: cursoranim .5s linear 1s infinite;
+      animation-fill-mode: forwards;
+      @media screen and (max-width: $md) {
+        left: initial;
+        right: 30%;
+        top: 58%;
+      }
+    }
+    .third-image{
+      left: 85%;
+      animation: cursoranim .5s linear 1s infinite;
+      animation-fill-mode: forwards;
+      @media screen and (max-width: $lap) {
+        left: 85%;
+      }
+      @media screen and (max-width: $md) {
+        left: initial;
+        right: 20%;
+        top: 90%;
+      }
+    }
+    >div{
+      transition: all .5s ease;
+      &:hover{
+        transform: scale(1.1);
+        transition: all .5s ease;
+        p{
+          opacity: 1;
+          transition: all .5s ease;
+        }
+      }
+      img{
+        width: 350px;
+        display: block;
+        margin: auto;
+      }
+      p{
+        text-align: center;
+        margin-top: -50px !important;
+        opacity: 0;
+        transition: all .5s ease;
+        @include p ($white,1.3)
+      }
+      .pleca{
+        width: 70%;
+        margin: 50px auto 0 auto;
+        display: block;
+      }
+    }
+  }
+}
+
+.section3{
+  width: col(18);
+  height: 100vh;
+  position: relative;
+  background-color: $purple;
+  overflow: hidden;
+  @media screen and (max-width: $lap) {
+    height: auto;
+    padding: col(1) 0;
+  }
+  h1{
+    text-align: center;
+    margin-bottom: 50px;
+    @media screen and (max-width: $lap) {
+      margin-bottom: 0;
+    }
+  }
+  .fondo{
+    position: absolute;
+    right: -25%;
+    top: -10%;
+    width: 1000px;
+  }
+  >div{
+    //background-color: $purple;
+    width: 900px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+    @media screen and (max-width: $lg) {
+      width: 550px;
+    }
+    @media screen and (max-width: $md) {
+      width: 380px;
+    }
+    @media screen and (max-width: $sm) {
+      width: 340px;
+    }
+    .svgcont{
+      position: absolute;
+      width: 220px;
+      @media screen and (max-width: $md) {
+        width: 170px;
+      }
+      &.svg1{
+        left: 210px;
+        top: 110px;
+        @media screen and (max-width: $lg) {
+          left: 70px;
+        }
+        @media screen and (max-width: $md) {
+          top: 200px;
+          left: 50px;
+          width: 130px;
+        }
+      }
+      &.svg2{
+        right: 230px;
+        top: 100px;
+        @media screen and (max-width: $lg) {
+          right: 60px;
+        }
+        @media screen and (max-width: $md) {
+          right: 50px;
+          top: 180px;
+        }
+
+      }
+      &.svg3{
+        right: 210px;
+        bottom: 200px;
+        @media screen and (max-width: $lg) {
+          right: 40px;
+          bottom: 200px;
+        }
+        @media screen and (max-width: $md) {
+          right: 20px;
+        }
+      }
+      &.svg4{
+        right: 190px;
+        top: 80px;
+        @media screen and (max-width: $lg) {
+          right: 30px;
+        }
+        @media screen and (max-width: $md) {
+          right: 30px;
+          top: 130px;
+        }
+      }
+      polyline, line{
+        stroke-dasharray: 3;
+        animation: dash 5s linear infinite;
+      }
+    }
+    .barra{
+      width: 13px;
+      position: absolute;
+      @media screen and (max-width: $lap) {
+        width: 10px;
+      }
+      &.barraleft{
+        left: 0;
+      }
+      &.barraright{
+        right: 0;
+      }
+    }
+    .base{
+      width: 270px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      @media screen and (max-width: $md) {
+        width: 250px;
+      }
+    }
+    .cuernoder{
+      position: absolute;
+      right: 150px;
+      width: 70px;
+      top: 0px;
+      @media screen and (max-width: $lg) {
+        right: 30px;
+      }
+      @media screen and (max-width: $md) {
+        right: 20px;
+        top: 40px;
+      }
+    }
+    .cuernoizq{
+      position: absolute;
+      left: 140px;
+      width: 60px;
+      top: 120px;
+      @media screen and (max-width: $lg) {
+        left: 20px;
+      }
+      @media screen and (max-width: $md) {
+        left: 20px;
+        top: 180px;
+      }
+    }
+    .ojos{
+      position: absolute;
+      right: 190px;
+      width: 70px;
+      top: 210px;
+      @media screen and (max-width: $lg) {
+        right: 10px;
+      }
+      @media screen and (max-width: $md) {
+        top: 260px;
+        right: 20px;
+      }
+    }
+    .boca{
+      position: absolute;
+      right: 210px;
+      width: 30px;
+      bottom: 280px;
+      @media screen and (max-width: $lg) {
+        right: 50px;
+        bottom: 270px;
+      }
+      @media screen and (max-width: $md) {
+        right: 20px;
+        bottom: 250px;
+      }
+    }
+  }
+}
+
+.section4{
+  background-color: $purple;
+  position: relative;
+  width: col(18);
+  padding: col(1);
+  h1{
+    text-align: center;
+  }
+  h2{
+    text-transform: capitalize;
+  }
+  .cont{
+    height: 90vh;
+    position: relative;
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    @media screen and (max-width: $lap) {
+      width: 900px;
+      height: 800px;
+    }
+    @media screen and (max-width: $lg) {
+      width: 700px;
+      height: 700px;
+    }
+    @media screen and (max-width: $md) {
+      width: 100%;
+      height: 100vh;
+    }
+    @media screen and (max-width: $sm) {
+      width: 100%;
+      height: 100vh;
+    }
+    polyline, line{
+      stroke-dasharray: 3;
+      animation: dash 5s linear infinite;
+    }
+    .svgcont{
+      position: absolute;
+      width:230px;
+      @media screen and (max-width: $lg) {
+        width: 150px;
+      }
+      @media screen and (max-width: $md) {
+        display: none;
+      }
+    }
+    .line,.verticalline{
+      display: none;
+    }
+    .svg1{
+      left: 320px;
+      top: 40px;
+      @media screen and (max-width: $lap) {
+        left: 260px;
+        top: 20px;
+      }
+      @media screen and (max-width: $lg) {
+        left: 190px;
+        top: 40px;
+        width: 150px;
+      }
+    }
+    .svg2{
+      left: 310px;
+      top: 240px;
+      @media screen and (max-width: $lap) {
+        width: 190px;
+        left: 220px;
+        top: 190px;
+        z-index: 1;
+      }
+      @media screen and (max-width: $lg) {
+        width: 190px;
+        left: 150px;
+        top: 150px;
+       z-index: 0;
+      }
+
+    }
+
+    .svg3{
+      left: 290px;
+      bottom: 200px;
+        @media screen and (max-width: $lap) {
+          left: 190px;
+          bottom: 170px;
+        }
+      }
+      .svg4{
+        right: 300px;
+        top: 110px;
+        @media screen and (max-width: $lap) {
+          right: 210px;
+          top: 70px;
+        }
+        @media screen and (max-width: $lap) {
+          right: 180px;
+        top: 80px;
+        }
+
+
+      }
+      .svg5{
+        right: 300px;
+        bottom: 200px;
+        @media screen and (max-width: $lap) {
+          right: 240px;
+          bottom: 280px;
+        }
+        @media screen and (max-width: $lg) {
+          right: 190px;
+          bottom: 300px;
+        }
+
+      }
+      .svg6{
+        right: 300px;
+        bottom: 110px;
+        @media screen and (max-width: $lap) {
+          right: 210px;
+          bottom: 210px;
+        }
+        @media screen and (max-width: $lg) {
+          right: 190px;
+        bottom: 200px;
+        z-index: 1;
+        }
+
+      }
+    .rare{
+      position: absolute;
+
+      left: 0;
+      top: 0;
+      .cuadro1{
+        left: 0;
+        bottom: 4px;
+        animation-name: opacity;
+        animation-duration: 3s;
+        animation-timing-function: ease-out;
+        animation-delay: 0s;
+        //animation-direction: alternate;
+        animation-direction: linear;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+      }
+      .cuadro2{
+        left: 130px;
+        bottom: 4px;
+        animation: opacity infinite 3s linear forwards;
+        animation-delay: 3s;
+      }
+      .cuadro3{
+        left: 260px;
+        bottom: 4px;
+      }
+    }
+    .head{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .eyes{
+      position: absolute;
+      bottom: 20%;
+      right: 0;
+      @media screen and (max-width: $lap) {
+        top: initial;
+        bottom: 35%;
+      }
+      @media screen and (max-width: $lg) {
+        bottom: 45%;
+      }
+      @media screen and (max-width: $md) {
+        top: initial;
+        bottom: 30%;
+      }
+    }
+    .clothes{
+      position: absolute;
+      bottom: 40px;
+      right: 0;
+      @media screen and (max-width: $lap) {
+        bottom:20%;
+      }
+      @media screen and (max-width: $md) {
+        bottom: 20%;
+      }
+    }
+    .mouth{
+      position: absolute;
+      left: 0;
+      bottom: 60%;
+      @media screen and (max-width: $lap) {
+        bottom:70%;
+      }
+      @media screen and (max-width: $lg) {
+        z-index: 1;
+      }
+      @media screen and (max-width: $md) {
+        top: 10%;
+        bottom: initial;
+      }
+    }
+    .bg{
+      position: absolute;
+      bottom: 20%;
+      left: 0;
+    }
+    .avatar{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      width: 350px;
+      height: 350px;
+      @media screen and (max-width: $lap) {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+      }
+      @media screen and (max-width: $lg) {
+        width: 250px;
+        height: 250px;
+        top: -150px;
+      }
+      @media screen and (max-width: $md) {
+        width: 250px;
+        height: 250px;
+        top: -150px;
+      }
+      img{
+        width: 350px;
+        @media screen and (max-width: $lap) {
+          width: 300px;
+        }
+        @media screen and (max-width: $md) {
+          width: 250px;
+        }
+      }
+    }
+  }
+  .traits{
+    img{
+      width: 100px;
+      @media screen and (max-width: $lap) {
+        width: 70px;
+      }
+      @media screen and (max-width: $lg) {
+        width: 50px;
+      }
+    }
+  }
+}
+
+.title{
+  position: relative;
+  //background: rgb(255,255,255);
+  //background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(1,6,40,1) 84%, rgba(134,224,255,1) 010628%);
+  background-color: $purple;
+  z-index: 1;
+  text-align: center;
+  padding-bottom: 25px;
+  span{
+    color: $violet;
+  }
+  .violet{
+    color: $violet;
+  }
+  &.segundo{
+    padding-bottom: 25px;
+    background-color: $purple;
+    h1{
+      text-transform: capitalize;
+      @media screen and (max-width: $lg) {
+        max-width: 300px;
+        margin: auto;
+      }
+    }
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+.section1,.section2, .section3, .section4, .section6, .section7, .section9,.section10{
+  position:relative;
+  z-index: 1;
+}
+
+.webgl{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.coloredbg{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all .5s ease;
+  background-image: linear-gradient(180deg,#03011a,rgba(3,1,26,.2) 50%,#03011a),radial-gradient(circle farthest-corner at 100% 0,#33ffc2,#334aff 70%,#ff7333);
+}
+
+.section5{
+  position: relative;
+  width: col(18);
+  height: 100vh;
+  @media screen and (max-width: $lg) {
+    overflow: hidden;
+  }
+  .container{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    .titlecont{
+      margin:100px auto 0 auto;
+      @media screen and (max-width: $md) {
+        margin:100px auto 100px auto;
+      }
+      h1{
+        text-align: center;
+        margin-right: 5px;
+      }
+    }
+    .fondo{
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .div__cont{
+      .window{
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  .button{
+    bottom: -20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    @media screen and (max-width: $lg) {
+      bottom: 10px;
+    }
+  }
+}
+
+.buybutton{
+  background: $purple;
+  width: 100%;
+  position: relative;
+}
+
+.section6{
+  background-color: $purple;
+  display: flex;
+  align-items: center;
+  padding: col(1);
+  justify-content: space-between;
+  @media screen and (max-width: $lg) {
+    flex-direction: column-reverse;
+   }
+  .secondtitle{
+    @include h1($white,.8);
+    @media screen and (max-width: $lap) {
+      @include h1($white,1.2);
+    }
+  }
+  .buttcont{
+    display: flex;
+    align-items: center;
+    img{
+      width: 50px;
+      @media screen and (max-width: $lg) {
+        flex-direction: column;
+       }
+    }
+  }
+  .choose-cont{
+    padding: 0;
+    li{
+      position: relative;
+      h1{
+        text-align: center;
+        //position: absolute;
+        left: 0;
+        right: 0;
+        top: 60%;
+        z-index: 1;
+        margin: auto;
+      }
+    }
+    .slide-img{
+      width: 400px;
+      margin: auto;
+      @media screen and (max-width: $md) {
+        width: 300px;
+       }
+    }
+    width: 50%;
+    @media screen and (max-width: $lg) {
+      width: 100%;
+     }
+  }
+  #slideshow{
+    @media screen and (max-width: $lg) {
+      display: none;
+    }
+  }
+  .responsive-slider{
+    width: 100%;
+    height: 100%;
+    display: none;
+    @media screen and (max-width: $lg) {
+      display: block;
+    }
+    .slider-cont{
+      padding: 0;
+      li{
+        img{
+          width: 250px;
+          display: block;
+          margin: auto;
+        }
+      }
+    }
+  }
+  .slick-dots{
+    display: flex;
+    margin: 50px auto 0 auto;
+    width: 100px;
+    padding: 0;
+    justify-content: space-between;
+    li{
+      cursor: pointer;
+    }
+    button{
+      cursor: pointer;
+      font-size: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: gray;
+    }
+  }
+
+  .button{
+    margin: 0;
+  }
+  .right{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @media screen and (max-width: $lg) {
+      width: 100%;
+    }
+    p{
+      font-family: 'BlinkerExtraLight';
+      margin: 15px 0;
+    }
+  }
+}
+
+.choose__package{
+  background-color: $purple;
+  width: col(18);
+  padding: 0 col(1) col(1) col(1);
+  position: relative;
+  h1{
+    text-align: center;
+  }
+  ul{
+    padding: 0;
+    margin: 50px 0 0 0;
+    display: flex;
+    justify-content: space-around;
+    li{
+      width: 400px;
+      >img{
+        display: block;
+        margin: auto;
+        width: 120px;
+      }
+      .top{
+        margin-top: 15px;
+        background: rgb(0,212,255);
+        background: linear-gradient(0deg, rgba(0,212,255,1) 0%, rgba(122,138,252,1) 41%, rgba(213,0,213,1) 100%);
+        padding: 15px;
+        h1{
+          @include h1($white,.8)
+        }
+        p.texto{
+          font-family: 'BlinkerSemiBold';
+          line-height: 1.5;
+        }
+        .bordered-text{
+          border: solid 1px $darkViolet;
+          margin: 8px 0;
+          &:nth-last-of-type(1){
+            //margin-bottom: 100px;
+          }
+        }
+      }
+      .bottom{
+        margin-top: 5px;
+        border: solid 1px $darkViolet;
+      }
+      h1,p{
+        text-align: center;
+      }
+    }
+  }
+}
+
+.section88{
+  overflow: hidden;
+  width: col(18);
+  height: 100vh;
+  .container{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    .titlecont{
+
+      margin:100px auto 0 auto;
+      @media screen and (max-width: $md) {
+        margin:100px auto 100px auto;
+      }
+      h2{
+        text-align: center;
+        margin-right: 5px;
+      }
+      span{
+        font-size: 20px;
+      }
+    }
+    .lower__text{
+      position: absolute;
+      left: 10%;
+      bottom: 10%;
+    }
+    .fondo{
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .button{
+      bottom: 15px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+}
+
+.faqs{
+  width: col(18);
+  padding: col(1) 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  .circle{
+    position: absolute;
+    right: -20%;
+    top: 0;
+    width: 700px;
+  }
+  h1{
+    text-align: center;
+  }
+  background-color: $purple;
+
+  .logo{
+      position: absolute;
+      width: 200px;
+      left: 10%;
+      top: 40%;
+      z-index: 1;
+      @media screen and (max-width: $lap) {
+        left: 10%;
+        width: 170px;
+      }
+      @media screen and (max-width: $lg) {
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+  }
+
+
+  .faq{
+    width: col(6);
+    padding: 0;
+    margin-top: 100px;
+    @media screen and (max-width: $lap) {
+      width: col(10);
+    }
+    @media screen and (max-width: $lg) {
+      margin-top: 200px;
+    }
+    @media screen and (max-width: $md) {
+      width: col(15);
+    }
+    li{
+      border: 1px solid $violet;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 10px;
+      //height: 70px;
+      max-height: 70px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: max-height 0.5s ease;
+      position: relative;
+      @media screen and (max-width: $lap) {
+        max-height: 80px;
+      }
+      &::after{
+        content: "+";
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 23px;
+        font-size: 20px;
+        color: white;
+        transition: all 0.5s ease;
+      }
+      &.active{
+        //height: auto;
+        max-height: 300px;
+        transition: max-height 0.5s ease;
+        &::after{
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+      }
+
+      p{
+        text-align: center;
+        color: $violet;
+      }
+      >div{
+        border-top: solid 1px $violet;
+        margin-top: 20px;
+        p{
+          color: $white;
+          font-family: 'BlinkerExtraLight';
+        }
+      }
+    }
+  }
+}
+
+.meet__carlos{
+  width: col(18);
+  background-color: $purple;
+  position: relative;
+  z-index: 1;
+  padding: col(1) 0;
+  .top{
+    display: flex;
+    width: col(9);
+    margin: auto;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    @media screen and (max-width: $md) {
+      flex-direction: column;
+    }
+    .left{
+      width: col(9);
+      @media screen and (max-width: $md) {
+        width: col(18);
+      }
+    }
+    .right{
+      width: col(9);
+      position: relative;
+      @media screen and (max-width: $md) {
+        width: col(18);
+      }
+      img{
+        position: absolute;
+        right: -100px;
+        top: 40%;
+        width: 50px;
+      }
+    }
+  }
+  h1{
+    margin: 0px 0 100px 0;
+    color: $black;
+    text-align: center;
+  }
+
+  .bottom{
+    margin: 0;
+    padding: 0 25px;
+    display: block;
+    grid-template-columns: repeat(8,1fr);
+    h2{
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    img{
+      width: 30%;
+      display: block;
+      margin: 0 auto 50px auto;
+      @media screen and (max-width: $lg) {
+        width: 100%;
+      }
+    }
+    @media screen and (max-width: $lg) {
+      grid-template-columns: repeat(4,1fr);
+      gap: 30px;
+    }
+
+  }
+}
+
+.section11{
+  position: relative;
+  width: col(18);
+  height: 100vh;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  .titlecont{
+    margin:100px auto 0 auto;
+    @media screen and (max-width: $md) {
+      margin:100px auto 100px auto;
+    }
+    h2{
+      text-align: center;
+      margin-right: 5px;
+    }
+    span{
+      font-size: 20px;
+    }
+  }
+  .lower__text{
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    z-index: 2;
+  }
+  .mountain{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  .sol{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 750px;
+    @media screen and (max-width: $md) {
+      width: 450px;
+      top: 0;
+      bottom: initial;
+    }
+  }
+  ul{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 150px auto 0 auto;
+    padding: 0;
+    width: 100%;
+    z-index: 2;
+    @media screen and (max-width: $lg) {
+      width: col(16)
+    }
+    li{
+      img{
+        width: 160px;
+        margin: auto;
+        @media screen and (max-width: $md) {
+          width: 130px;
+        }
+      }
+    }
+  }
+}
+
+.section12{
+  position: relative;
+  width: col(18);
+  padding: col(1);
+  height: 100vh;
+  background-color: $purple;
+  @media screen and (max-width: $max) {
+    height: auto;
+  }
+  @media screen and (max-width: $sm) {
+    padding: col(1) 0 col(1) 0;
+  }
+  h1{
+   margin-bottom: 50px;
+    text-align: center;
+    @media screen and (max-width: $lap) {
+      margin-bottom: 20px;
+    }
+  }
+  .cont{
+    width: 900px;
+    height: 600px;
+
+    margin: auto;
+    position: relative;
+    //background-color: tan;
+    @media screen and (max-width: $lg) {
+      width: 700px;
+      height: 700px;
+    }
+    @media screen and (max-width: $md) {
+      width: 350px;
+      height: 450px;
+    }
+    .svgcont{
+      width: 90px;
+      polyline, line,path{
+        stroke-dasharray: 3;
+        animation: dash 5s linear infinite;
+      }
+      &.one{
+        position: absolute;
+        left: 490px;
+        top: 90px;
+        @media screen and (max-width: $lg) {
+          left: 280px;
+          top: 160px;
+        }
+        @media screen and (max-width: $md) {
+          left: 150px;
+          top: 70px;
+        }
+      }
+      &.two{
+        position: absolute;
+        right: 160px;
+        top: 130px;
+        @media screen and (max-width: $lg) {
+          right: 180px;
+          top: 180px;
+        }
+        @media screen and (max-width: $md) {
+          right: 50px;
+          top: 70px;
+          width: 70px;
+        }
+      }
+      &.three{
+        position: absolute;
+        bottom: 0;
+        width: 50px;
+        left: 280px;
+        bottom: 150px;
+        @media screen and (max-width: $lg) {
+          left: 210px;
+        bottom: 200px;
+        }
+        @media screen and (max-width: $md) {
+          left: 170px;
+          bottom: 80px;
+        }
+      }
+      &.four{
+        position: absolute;
+        width: 70px;
+        left: 190px;
+        bottom: 300px;
+        @media screen and (max-width: $lg) {
+          left: 90px;
+          bottom: 400px;
+        }
+        @media screen and (max-width: $md) {
+          left: 50px;
+          bottom: 250px;
+        }
+      }
+      &.five{
+        position: absolute;
+        bottom: 0;
+        width: 50px;
+        right: 370px;
+        bottom: 110px;
+        @media screen and (max-width: $lg) {
+          right: 270px;
+          bottom: 170px;
+        }
+        @media screen and (max-width: $md) {
+          right: 220px;
+          bottom: 110px;
+        }
+      }
+      &.six{
+        position: absolute;
+        bottom: 0;
+        width: 60px;
+        right: 180px;
+        bottom: 230px;
+        @media screen and (max-width: $lg) {
+          right: 130px;
+          bottom: 250px;
+        }
+        @media screen and (max-width: $md) {
+          right: 60px;
+          bottom: 167px;
+        }
+      }
+    }
+    .shopify{
+      position: absolute;
+      left: 40%;
+      top: 0;
+      @media screen and (max-width: $lg) {
+        left: 20%;
+        top: 10%;
+      }
+      @media screen and (max-width: $md) {
+        left: 20%;
+        top: 0%;
+      }
+    }
+    img{
+      @media screen and (max-width: $md) {
+        width: 120px;
+      }
+    }
+    .smart{
+      position: absolute;
+      right: 20%;
+      top: 7%;
+      @media screen and (max-width: $lg) {
+        right: 30%;
+        top: 13%;
+      }
+      @media screen and (max-width: $md) {
+        right: 0%;
+        top: 8%;
+      }
+    }
+    .mkt{
+      position: absolute;
+      left: 5%;
+      bottom: 40%;
+      @media screen and (max-width: $lg) {
+        left: 0;
+        bottom: 50%;
+      }
+      @media screen and (max-width: $md) {
+
+      }
+    }
+    .webpage{
+      position: absolute;
+      right: 5%;
+      bottom: 20%;
+      @media screen and (max-width: $lg) {
+        right: 0;
+        bottom: 20%;
+      }
+      @media screen and (max-width: $md) {
+        bottom: 70px;
+      }
+    }
+    .discord{
+      position: absolute;
+      right: 40%;
+      bottom: 0;
+      @media screen and (max-width: $lg) {
+        right: 40%;
+        bottom: 50px;
+      }
+      @media screen and (max-width: $md) {
+        right: 30%;
+        bottom: 0;
+      }
+    }
+    .avatar{
+      position: absolute;
+      left: 20%;
+      bottom: 5%;
+      @media screen and (max-width: $lg) {
+        left: 10%;
+        bottom: 11%;
+      }
+      @media screen and (max-width: $md) {
+        left: 0;
+        bottom: 0;
+      }
+    }
+    .base{
+      width: 500px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      @media screen and (max-width: $md) {
+        width: 200px;
+      }
+    }
+  }
+}
+
+/* 3D Slideshow */
+
+#slideshow {
+  margin: 0 auto;
+  padding-top: 50px;
+  height: 600px;
+  width: 70%;
+  box-sizing: border-box;
+  @media screen and (max-width: $md) {
+    display: none;
+  }
+}
+
+.entire-content {
+  margin: auto;
+  width: 200px;
+  perspective: 1000px;
+  position: relative;
+  padding-top: 80px;
+  @media screen and (max-width: $lap) {
+    //width: 130px;
+  }
+  @media screen and (max-width: $sm) {
+    width: 200px;
+    padding-top: 0;
+  }
+}
+
+@keyframes rotar {
+  from {
+    transform: rotateY(0deg);
+  } to {
+    transform: rotateY(360deg);
+  }
+}
+
+
+.content-carrousel,.content-carrousel4{
+  width: 100%;
+  position: absolute;
+  float: right;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  //animation: rotar 2s infinite linear;
+  @media screen and (max-width: $sm) {
+    //animation: rotar 12s infinite linear;
+  }
+  img{
+    image-rendering: auto;
+    transition: all 300ms;
+    //width: 100%;
+    //height: 100%;
+    &:hover{
+      transform: scale(1.1);
+      transition: all 300ms;
+    }
+  }
+  figure{
+    //width: 90%;
+    position: absolute;
+  }
+}
+@keyframes rotar {
+  from {
+    transform: rotateY(0deg);
+  } to {
+    transform: rotateY(360deg);
+  }
+}
+.content-carrousel{
+  figure:nth-child(1) {
+    transform: rotateY(0deg) translateZ(300px);
+  }
+  figure:nth-child(2) {
+    transform: rotateY(120deg) translateZ(300px);
+  }
+  figure:nth-child(3) {
+    transform: rotateY(240deg) translateZ(300px);
+  }
+}
+
+.content-carrousel4{
+    figure:nth-child(1) {
+      transform: rotateY(0deg) translateZ(300px);
+    }
+    figure:nth-child(2) {
+      transform: rotateY(90deg) translateZ(300px);
+    }
+    figure:nth-child(3) {
+      transform: rotateY(180deg) translateZ(300px);
+    }
+    figure:nth-child(4) {
+      transform: rotateY(270deg) translateZ(300px);
+    }
+}
+
+.webgl-slider{
+  display: none !important;
+  padding: 0;
+  margin: 0;
+  @media screen and (max-width: $md) {
+    display: block !important;
+  }
+  @media screen and (max-width: $sm) {
+    width: 80%;
+    margin: auto;
+  }
+  .slick-active{
+    opacity: .5;
+  }
+  .slick-center{
+    opacity: 1;
+   img{
+    width: 160px;
+  }
+ }
+  img{
+    width: 130px;
+    display: block;
+    margin: auto;
+  }
+  ul.slick-dots{
+    width: 100%;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+
+    list-style: none;
+    li{
+      cursor: pointer;
+      button{
+        font-size: 0;
+        border-radius: 50%;
+        background-color: $violet;
+        border: none;
+        width: 15px;
+        height:15px;
+      }
+    }
+  }
+}
+
+@keyframes title {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  } to {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+}
