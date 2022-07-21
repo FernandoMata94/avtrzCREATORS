@@ -1371,7 +1371,96 @@ body {
   background-image: linear-gradient(180deg,#03011a,rgba(3,1,26,.2) 50%,#03011a),radial-gradient(circle farthest-corner at 100% 0,#33ffc2,#334aff 70%,#ff7333);
 }
 
-.section5{
+.choose__nftcases{
+  width: col(18);
+  background-color: $purple;
+  position: relative;
+  z-index: 1;
+  padding: col(1);
+  h1{
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  h2{
+    max-width: 650px;
+    text-transform: capitalize;
+  }
+
+  ul{
+    width: col(5);
+    margin: auto;
+    position: relative;
+    padding-top: 150px;
+    .first{
+      border: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      .barra{
+        width: 15px;
+        background-color: $darkViolet;
+        margin-right: 5px;
+      }
+      .cont{
+        border: solid 1px $darkViolet;
+        width: 700px;
+        padding: 15px;
+      }
+      img{
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        width: 30px;
+      }
+    }
+    .second,.third{
+      border: none;
+      position: relative;
+      right: 0;
+      top: 0;
+      display: flex;
+      .barra{
+        width: 15px;
+        background-color: $darkViolet;
+        margin-right: 5px;
+      }
+      .cont{
+        border: solid 1px $darkViolet;
+        width: 700px;
+        padding: 15px;
+        h2{
+          @include h2($white,1.2);
+          text-transform: capitalize;
+        }
+      }
+      img{
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        width: 30px;
+        transform: rotate(170deg);
+      }
+    }
+    .second{
+      margin-left: 50px;
+      width: 500px;
+    }
+    .third{
+      margin-left: 100px;
+      width: 700px;
+    }
+    li{
+      margin: 10px 0;
+      border: solid 1px $darkViolet;
+      p{
+        text-align: center;
+      }
+    }
+  }
+}
+
+.tell__story{
   position: relative;
   width: col(18);
   height: 100vh;
@@ -1419,12 +1508,6 @@ body {
       bottom: 10px;
     }
   }
-}
-
-.buybutton{
-  background: $purple;
-  width: 100%;
-  position: relative;
 }
 
 .section6{
@@ -1544,8 +1627,14 @@ body {
   width: col(18);
   padding: 0 col(1) col(1) col(1);
   position: relative;
-  h1{
+  h1,h2{
     text-align: center;
+  }
+  h2{
+    margin: 100px 0 50px 0;
+  }
+  .button{
+
   }
   ul{
     padding: 0;
@@ -1553,7 +1642,7 @@ body {
     display: flex;
     justify-content: space-around;
     li{
-      width: 400px;
+      width: 350px;
       >img{
         display: block;
         margin: auto;
@@ -1565,7 +1654,7 @@ body {
         background: linear-gradient(0deg, rgba(0,212,255,1) 0%, rgba(122,138,252,1) 41%, rgba(213,0,213,1) 100%);
         padding: 15px;
         h1{
-          @include h1($white,.8)
+          @include h1($white,.8);
         }
         p.texto{
           font-family: 'BlinkerSemiBold';
@@ -1574,6 +1663,9 @@ body {
         .bordered-text{
           border: solid 1px $darkViolet;
           margin: 8px 0;
+          p{
+            @include p($white,.8);
+          }
           &:nth-last-of-type(1){
             //margin-bottom: 100px;
           }
