@@ -155,14 +155,13 @@ p.especial{
 
 @mixin button2($bg) {
   background: $bg;
-  font-family: "BlinkerBold";
-  text-transform: uppercase;
-  letter-spacing: 3px;
+  font-family: "BlinkerSemiBold";
+  font-size: 20px;
+  letter-spacing: 1px;
   color: $white;
-  width: 250px;
+  width: 300px;
   padding: 20px;
-  border-radius: 10px;
-  border:1px solid  $violet;
+  border:1px solid  $darkViolet;
   margin: auto;
   cursor: pointer;
   display: block;
@@ -174,6 +173,10 @@ p.especial{
   &:active {
     background: darken($bg, 25%);
   }
+}
+
+.button2{
+  @include button2($darkViolet);
 }
 
 a {
@@ -508,58 +511,7 @@ body {
       background-color: $violet;
     }
   }
-  .companiesleft{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 40px 0 0 0;
-    @media screen and (max-width: $lap) {
-      margin: 10px 0 0 0;
-    }
-    @media screen and (max-width: $sm) {
-      display: grid;
-      grid-template-columns: repeat(1,1fr);
-    }
-    img{
-      width: 100px;
-      @media screen and (max-width: $sm) {
-        display: block;
-        margin: auto;
-      }
-    }
-    .apple{
-      width: 50px;
-    }
-  }
-  .companiesright{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    >div{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      &:first-of-type{
-        margin-bottom: 15px;
-      }
-    }
-    @media screen and (max-width: $sm) {
-      display: grid;
-      grid-template-columns: repeat(1,1fr);
-    }
-    img{
-      width: 100px;
-      @media screen and (max-width: $sm) {
-        display: block;
-        margin: auto;
-      }
-    }
-    .apple{
-      width: 50px;
-    }
-  }
+
   .topleft{
     //background-color: #73ab3c;
     align-self: center;
@@ -574,25 +526,15 @@ body {
       margin: 25px 0;
     }
     h2{
-      @include h2($white,1.2);
+      @include h2($white,1.8);
+      text-transform:initial;
+      max-width: 550px;
       span{
         color: $violet;
       }
     }
-    h1{
-      @include h1($white,1.5);
-      span{
-        color: $violet
-      }
-      @media screen and (max-width: $max) {
-        @include h1($white,1);
-      }
-    }
-    .button{
-      @include button2($violet);
-      border-color: $violet;
+    .button2{
       margin: 15px 0 15px 0;
-      font-size: 20px;
       @media screen and (max-width: $md) {
         margin:15px auto 15px auto;
       }
@@ -618,160 +560,52 @@ body {
       }
     }
   }
-  .purpleline{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -20px;
-    width: 90vw;
-    height: 8px;
-    background-color: #F93DF9;
-    border-radius: 10px;
-    margin: auto;
-    @media screen and (max-width: $max) {
-      top: -10px;
-    }
-    @media screen and (max-width: $md) {
-      top: -210px;
-      width: 80vw;
-      display: none;
-    }
-  }
   .bottomleft{
-    //background-color: #b88888;
-    width: 60%;
-    text-align: center;
-    position: relative;
-    //display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    @media screen and (max-width: $lap) {
-      width: 80%;
-    }
-    @media screen and (max-width: $md) {
-      width: 100%;
+    background-color:$darkViolet;
+    width: 400px;
+    .cont{
+      background-color: $purple;
+      width: 99%;
+      margin: 6px auto 0 auto;
+      padding: 25px;
+      p{
+        font-family: BlinkerSemiBold;
+      }
+      .austin{
+        display: flex;
+        justify-content: center;
+        .pin{
+          width: 20px;
+          margin-right: 15px;
+        }
+      }
     }
     .companies{
-      width: 350px;
-      margin: 40px auto 0 auto;
-      @media screen and (max-width: $md) {
-        grid-template-columns: repeat(3,1fr);
-        width: 100%;
-      }
-    }
-    .austin{
       display: flex;
-      justify-content: center;
-      .pin{
-        width: 25px;
-        margin-right: 15px;
-      }
-    }
-    p{
-      &:nth-last-of-type(1){
-        @include p ($white,.9)
-      }
-    }
-  }
-  .bottomright{
-    width: 80%;
-    justify-self: center;
-    flex-direction: column;
-    justify-content: space-around;
-    .texto{
-      margin-bottom: 50px;
-      margin-top: 10px;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 15px;
       @media screen and (max-width: $lap) {
-        margin-bottom: 40px;
+        margin: 10px 0 0 0;
       }
-      @media screen and (max-width: $md) {
-        margin-bottom: 25px;
-        text-align: center;
+      @media screen and (max-width: $sm) {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
       }
-    }
-    @media screen and (max-width: $lap) {
-      width: 100%;
-    }
-    @media screen and (max-width: $md) {
-      grid-row: 4;
-      margin: 25px 0;
-    }
-  }
-
-}
-
-.brands{
-  width: col(18);
-  padding: col(1);
-  background-color: $purple;
-  position: relative;
-  display: flex;
-  z-index: 1;
-  height: 100vh;
-  @media screen and (max-width: $lg) {
-    flex-direction: column;
-    height: auto;
-  }
-  .left,.right{
-    position: relative;
-    width: col(9);
-    padding: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: start;
-    transition: all .5s ease;
-    @media screen and (max-width: $lap) {
-      justify-content: flex-start;
-    }
-    @media screen and (max-width: $lg) {
-      width: col(18);
-    }
-    h1{
-      text-transform: capitalize;
-      color: $violet;
-      transition: all .5s ease;
-    }
-    h1,p,.line{
-      z-index: 1 ;
-    }
-    .cont{
-      z-index: 1;
-      //height: 220px;
-      @media screen and (max-width: $lg) {
-        height: auto;
+      img{
+        width: 100px;
+        @media screen and (max-width: $sm) {
+          display: block;
+          margin: auto;
+        }
+      }
+      .nvidia{
+        width: 80px;
+      }
+      .apple{
+        width: 20px;
       }
     }
-    &:before{
-      content: '';
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      background: rgb(194,23,194);
-      background: linear-gradient(270deg, rgb(164, 19, 164) 0%, rgba(249,61,249,1) 100%);
-      opacity: 0;
-      transition: all .5s ease;
-      border-radius: 25px 0 25px 25px;
-    }
-    &:hover{
-      h1{
-        transition: all .5s ease;
-        color: $white;
-      }
-      &::before{
-        opacity: 1;
-        transition: all .5s ease;
-      }
-    }
-  }
-  .line{
-    width: 100%;
-    height: 2px;
-    background-color: $white;
-    margin: 15px 0;
   }
 }
 
@@ -881,440 +715,6 @@ body {
   }
 }
 
-.section3{
-  width: col(18);
-  height: 100vh;
-  position: relative;
-  background-color: $purple;
-  overflow: hidden;
-  @media screen and (max-width: $lap) {
-    height: auto;
-    padding: col(1) 0;
-  }
-  h1{
-    text-align: center;
-    margin-bottom: 50px;
-    @media screen and (max-width: $lap) {
-      margin-bottom: 0;
-    }
-  }
-  .fondo{
-    position: absolute;
-    right: -25%;
-    top: -10%;
-    width: 1000px;
-  }
-  >div{
-    //background-color: $purple;
-    width: 900px;
-    height: 600px;
-    margin: auto;
-    position: relative;
-    @media screen and (max-width: $lg) {
-      width: 550px;
-    }
-    @media screen and (max-width: $md) {
-      width: 380px;
-    }
-    @media screen and (max-width: $sm) {
-      width: 340px;
-    }
-    .svgcont{
-      position: absolute;
-      width: 220px;
-      @media screen and (max-width: $md) {
-        width: 170px;
-      }
-      &.svg1{
-        left: 210px;
-        top: 110px;
-        @media screen and (max-width: $lg) {
-          left: 70px;
-        }
-        @media screen and (max-width: $md) {
-          top: 200px;
-          left: 50px;
-          width: 130px;
-        }
-      }
-      &.svg2{
-        right: 230px;
-        top: 100px;
-        @media screen and (max-width: $lg) {
-          right: 60px;
-        }
-        @media screen and (max-width: $md) {
-          right: 50px;
-          top: 180px;
-        }
-
-      }
-      &.svg3{
-        right: 210px;
-        bottom: 200px;
-        @media screen and (max-width: $lg) {
-          right: 40px;
-          bottom: 200px;
-        }
-        @media screen and (max-width: $md) {
-          right: 20px;
-        }
-      }
-      &.svg4{
-        right: 190px;
-        top: 80px;
-        @media screen and (max-width: $lg) {
-          right: 30px;
-        }
-        @media screen and (max-width: $md) {
-          right: 30px;
-          top: 130px;
-        }
-      }
-      polyline, line{
-        stroke-dasharray: 3;
-        animation: dash 5s linear infinite;
-      }
-    }
-    .barra{
-      width: 13px;
-      position: absolute;
-      @media screen and (max-width: $lap) {
-        width: 10px;
-      }
-      &.barraleft{
-        left: 0;
-      }
-      &.barraright{
-        right: 0;
-      }
-    }
-    .base{
-      width: 270px;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      margin: auto;
-      @media screen and (max-width: $md) {
-        width: 250px;
-      }
-    }
-    .cuernoder{
-      position: absolute;
-      right: 150px;
-      width: 70px;
-      top: 0px;
-      @media screen and (max-width: $lg) {
-        right: 30px;
-      }
-      @media screen and (max-width: $md) {
-        right: 20px;
-        top: 40px;
-      }
-    }
-    .cuernoizq{
-      position: absolute;
-      left: 140px;
-      width: 60px;
-      top: 120px;
-      @media screen and (max-width: $lg) {
-        left: 20px;
-      }
-      @media screen and (max-width: $md) {
-        left: 20px;
-        top: 180px;
-      }
-    }
-    .ojos{
-      position: absolute;
-      right: 190px;
-      width: 70px;
-      top: 210px;
-      @media screen and (max-width: $lg) {
-        right: 10px;
-      }
-      @media screen and (max-width: $md) {
-        top: 260px;
-        right: 20px;
-      }
-    }
-    .boca{
-      position: absolute;
-      right: 210px;
-      width: 30px;
-      bottom: 280px;
-      @media screen and (max-width: $lg) {
-        right: 50px;
-        bottom: 270px;
-      }
-      @media screen and (max-width: $md) {
-        right: 20px;
-        bottom: 250px;
-      }
-    }
-  }
-}
-
-.section4{
-  background-color: $purple;
-  position: relative;
-  width: col(18);
-  padding: col(1);
-  h1{
-    text-align: center;
-  }
-  h2{
-    text-transform: capitalize;
-  }
-  .cont{
-    height: 90vh;
-    position: relative;
-    width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    @media screen and (max-width: $lap) {
-      width: 900px;
-      height: 800px;
-    }
-    @media screen and (max-width: $lg) {
-      width: 700px;
-      height: 700px;
-    }
-    @media screen and (max-width: $md) {
-      width: 100%;
-      height: 100vh;
-    }
-    @media screen and (max-width: $sm) {
-      width: 100%;
-      height: 100vh;
-    }
-    polyline, line{
-      stroke-dasharray: 3;
-      animation: dash 5s linear infinite;
-    }
-    .svgcont{
-      position: absolute;
-      width:230px;
-      @media screen and (max-width: $lg) {
-        width: 150px;
-      }
-      @media screen and (max-width: $md) {
-        display: none;
-      }
-    }
-    .line,.verticalline{
-      display: none;
-    }
-    .svg1{
-      left: 320px;
-      top: 40px;
-      @media screen and (max-width: $lap) {
-        left: 260px;
-        top: 20px;
-      }
-      @media screen and (max-width: $lg) {
-        left: 190px;
-        top: 40px;
-        width: 150px;
-      }
-    }
-    .svg2{
-      left: 310px;
-      top: 240px;
-      @media screen and (max-width: $lap) {
-        width: 190px;
-        left: 220px;
-        top: 190px;
-        z-index: 1;
-      }
-      @media screen and (max-width: $lg) {
-        width: 190px;
-        left: 150px;
-        top: 150px;
-       z-index: 0;
-      }
-
-    }
-
-    .svg3{
-      left: 290px;
-      bottom: 200px;
-        @media screen and (max-width: $lap) {
-          left: 190px;
-          bottom: 170px;
-        }
-      }
-      .svg4{
-        right: 300px;
-        top: 110px;
-        @media screen and (max-width: $lap) {
-          right: 210px;
-          top: 70px;
-        }
-        @media screen and (max-width: $lap) {
-          right: 180px;
-        top: 80px;
-        }
-
-
-      }
-      .svg5{
-        right: 300px;
-        bottom: 200px;
-        @media screen and (max-width: $lap) {
-          right: 240px;
-          bottom: 280px;
-        }
-        @media screen and (max-width: $lg) {
-          right: 190px;
-          bottom: 300px;
-        }
-
-      }
-      .svg6{
-        right: 300px;
-        bottom: 110px;
-        @media screen and (max-width: $lap) {
-          right: 210px;
-          bottom: 210px;
-        }
-        @media screen and (max-width: $lg) {
-          right: 190px;
-        bottom: 200px;
-        z-index: 1;
-        }
-
-      }
-    .rare{
-      position: absolute;
-
-      left: 0;
-      top: 0;
-      .cuadro1{
-        left: 0;
-        bottom: 4px;
-        animation-name: opacity;
-        animation-duration: 3s;
-        animation-timing-function: ease-out;
-        animation-delay: 0s;
-        //animation-direction: alternate;
-        animation-direction: linear;
-        animation-iteration-count: infinite;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-      }
-      .cuadro2{
-        left: 130px;
-        bottom: 4px;
-        animation: opacity infinite 3s linear forwards;
-        animation-delay: 3s;
-      }
-      .cuadro3{
-        left: 260px;
-        bottom: 4px;
-      }
-    }
-    .head{
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-    .eyes{
-      position: absolute;
-      bottom: 20%;
-      right: 0;
-      @media screen and (max-width: $lap) {
-        top: initial;
-        bottom: 35%;
-      }
-      @media screen and (max-width: $lg) {
-        bottom: 45%;
-      }
-      @media screen and (max-width: $md) {
-        top: initial;
-        bottom: 30%;
-      }
-    }
-    .clothes{
-      position: absolute;
-      bottom: 40px;
-      right: 0;
-      @media screen and (max-width: $lap) {
-        bottom:20%;
-      }
-      @media screen and (max-width: $md) {
-        bottom: 20%;
-      }
-    }
-    .mouth{
-      position: absolute;
-      left: 0;
-      bottom: 60%;
-      @media screen and (max-width: $lap) {
-        bottom:70%;
-      }
-      @media screen and (max-width: $lg) {
-        z-index: 1;
-      }
-      @media screen and (max-width: $md) {
-        top: 10%;
-        bottom: initial;
-      }
-    }
-    .bg{
-      position: absolute;
-      bottom: 20%;
-      left: 0;
-    }
-    .avatar{
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      margin: auto;
-      width: 350px;
-      height: 350px;
-      @media screen and (max-width: $lap) {
-        width: 300px;
-        height: 300px;
-        top: -150px;
-      }
-      @media screen and (max-width: $lg) {
-        width: 250px;
-        height: 250px;
-        top: -150px;
-      }
-      @media screen and (max-width: $md) {
-        width: 250px;
-        height: 250px;
-        top: -150px;
-      }
-      img{
-        width: 350px;
-        @media screen and (max-width: $lap) {
-          width: 300px;
-        }
-        @media screen and (max-width: $md) {
-          width: 250px;
-        }
-      }
-    }
-  }
-  .traits{
-    img{
-      width: 100px;
-      @media screen and (max-width: $lap) {
-        width: 70px;
-      }
-      @media screen and (max-width: $lg) {
-        width: 50px;
-      }
-    }
-  }
-}
-
 .title{
   position: relative;
   //background: rgb(255,255,255);
@@ -1381,6 +781,12 @@ body {
     text-align: center;
     margin-bottom: 100px;
   }
+  .circle{
+    position: absolute;
+    left: -30%;
+    top: 0;
+    width: 1000px;
+  }
   h2{
     max-width: 650px;
     text-transform: capitalize;
@@ -1423,12 +829,12 @@ body {
       .barra{
         width: 15px;
         background-color: $darkViolet;
-        margin-right: 5px;
+        margin-left: 5px;
       }
       .cont{
         border: solid 1px $darkViolet;
         width: 700px;
-        padding: 15px;
+        padding: 20px;
         h2{
           @include h2($white,1.2);
           text-transform: capitalize;
@@ -1443,11 +849,10 @@ body {
       }
     }
     .second{
-      margin-left: 50px;
       width: 500px;
     }
     .third{
-      margin-left: 100px;
+      margin-left: 50px;
       width: 700px;
     }
     li{
