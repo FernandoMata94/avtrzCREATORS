@@ -2,7 +2,7 @@ $white: #ffffff;
 $black: #000000;
 $darkgray: #1d1d1b;
 $purple: #010628;
-$violet:#F93DF9;
+$violet:#d500d5;
 $darkViolet:#d500d5;
 $blue: #3FA9F5;
 
@@ -494,7 +494,7 @@ body {
   position: relative;
   gap: 50px;
   @media screen and (max-width: $lap) {
-   height: auto;
+   //height: auto;
   }
   @media screen and (max-width: $md) {
     grid-template-columns: 1fr;
@@ -563,11 +563,22 @@ body {
   .bottomleft{
     background-color:$darkViolet;
     width: 400px;
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      border-top: 50px solid $purple;
+      border-left: 50px solid $darkViolet;
+      width: 0;
+      transform: rotate(90deg);
+    }
     .cont{
       background-color: $purple;
       width: 99%;
       margin: 6px auto 0 auto;
       padding: 25px;
+      text-align: center;
       p{
         font-family: BlinkerSemiBold;
       }
@@ -581,17 +592,11 @@ body {
       }
     }
     .companies{
+      width: 70%;
       display: flex;
       align-items: center;
       justify-content: space-around;
-      margin-top: 15px;
-      @media screen and (max-width: $lap) {
-        margin: 10px 0 0 0;
-      }
-      @media screen and (max-width: $sm) {
-        display: grid;
-        grid-template-columns: repeat(1,1fr);
-      }
+      margin: 15px auto 0 auto;
       img{
         width: 100px;
         @media screen and (max-width: $sm) {
@@ -604,6 +609,53 @@ body {
       }
       .apple{
         width: 20px;
+      }
+    }
+  }
+}
+
+.create{
+  position: relative;
+  background-color: $purple;
+  z-index: 1;
+  .title__cont{
+    display: flex;
+    align-items: center;
+    width: col(6);
+    margin: auto;
+    span{
+      width: 20px;
+      height: 8px;
+      margin: 0 15px;
+      background-color: $darkViolet;
+    }
+  }
+  .cont{
+    display: flex;
+  }
+  .left{
+    width: col(9);
+    .cont{
+      border: none;
+      position: relative;
+      right: 0;
+      top: 0;
+      display: flex;
+      .barra{
+        width: 15px;
+        background-color: $darkViolet;
+        margin-right: 5px;
+      }
+      .cont{
+        border: solid 1px $darkViolet;
+        width: 700px;
+        padding: 15px;
+      }
+      img{
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        width: 30px;
       }
     }
   }
@@ -625,6 +677,10 @@ body {
   h1{
     text-align: center;
   }
+  .cont{
+    display: flex;
+    width: col(18);
+  }
   .avatars{
     width: col(15);
     margin: 20px auto 0 auto;
@@ -633,56 +689,6 @@ body {
     position: relative;
     @media screen and (max-width: $md) {
       flex-direction: column;
-    }
-    #cursor{
-      width: 100px;
-      position: absolute;
-      bottom: 0;
-      opacity: 1;
-      transition: all .5s ease;
-    }
-    @keyframes cursoranim {
-      from {
-        opacity: 1;
-        transform: scale(1.1);
-      }
-      to {
-
-        transform: scale(1);
-      }
-    }
-    .first-image{
-      left: 10%;
-      animation: cursoranim .5s linear 1s infinite;
-      animation-fill-mode: forwards;
-      @media screen and (max-width: $md) {
-        left: initial;
-        right: 20%;
-        top: 24%;
-      }
-    }
-    .second-image{
-      left: 50%;
-      animation: cursoranim .5s linear 1s infinite;
-      animation-fill-mode: forwards;
-      @media screen and (max-width: $md) {
-        left: initial;
-        right: 30%;
-        top: 58%;
-      }
-    }
-    .third-image{
-      left: 85%;
-      animation: cursoranim .5s linear 1s infinite;
-      animation-fill-mode: forwards;
-      @media screen and (max-width: $lap) {
-        left: 85%;
-      }
-      @media screen and (max-width: $md) {
-        left: initial;
-        right: 20%;
-        top: 90%;
-      }
     }
     >div{
       transition: all .5s ease;
@@ -701,52 +707,10 @@ body {
       }
       p{
         text-align: center;
-        margin-top: -50px !important;
-        opacity: 0;
         transition: all .5s ease;
         @include p ($white,1.3)
       }
-      .pleca{
-        width: 70%;
-        margin: 50px auto 0 auto;
-        display: block;
-      }
     }
-  }
-}
-
-.title{
-  position: relative;
-  //background: rgb(255,255,255);
-  //background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(1,6,40,1) 84%, rgba(134,224,255,1) 010628%);
-  background-color: $purple;
-  z-index: 1;
-  text-align: center;
-  padding-bottom: 25px;
-  span{
-    color: $violet;
-  }
-  .violet{
-    color: $violet;
-  }
-  &.segundo{
-    padding-bottom: 25px;
-    background-color: $purple;
-    h1{
-      text-transform: capitalize;
-      @media screen and (max-width: $lg) {
-        max-width: 300px;
-        margin: auto;
-      }
-    }
-  }
-}
-
-@keyframes opacity {
-  from {
-    opacity: 0;
-  } to {
-    opacity: 1;
   }
 }
 
