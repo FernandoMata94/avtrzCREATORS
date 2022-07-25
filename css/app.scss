@@ -1055,15 +1055,54 @@ body {
       position: absolute;
       bottom: 0;
       left: 0;
-      z-index: -1;
+      z-index: 1;
     }
 
     .div__cont{
       display: flex;
       justify-content: space-around;
       align-items: center;
+      width: 1200px;
+      height: 600px;
+      //background-color: rgb(255, 157, 157);
+      position: relative;
+      z-index: 2;
+      margin: auto;
+      @media screen and (max-width: $lap) {
+        width: 1000px;
+      }
       @media screen and (max-width: $lg) {
+        width: 800px;
+      }
+      @media screen and (max-width: $md) {
+        width: 500px;
         flex-direction: column;
+      }
+      @media screen and (max-width: $sm) {
+        width:100%
+      }
+
+      .svgcont{
+        position: absolute;
+        polyline, line,path{
+          stroke-dasharray: 3;
+          animation: dash 5s linear infinite;
+        }
+        &.one{
+          top: 20px;
+          left: 580px;
+          width: 400px;
+        }
+        &.two{
+          top: 220px;
+          left: 512px;
+          width: 324px;
+        }
+        &.three{
+          bottom: 40px;
+          left: 542px;
+          width: 324px;
+        }
       }
       .left{
         position: relative;
