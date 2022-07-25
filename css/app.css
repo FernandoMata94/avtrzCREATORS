@@ -785,13 +785,6 @@ body {
   opacity: 1;
 }
 
-#lottie2 {
-  width: 400px;
-  position: absolute;
-  left: 250px;
-  bottom: 300px;
-}
-
 .create {
   position: relative;
   background-color: #010628;
@@ -1169,11 +1162,33 @@ body {
   text-transform: capitalize;
 }
 
+.choose__nftcases #lottie2 {
+  width: 400px;
+  position: absolute;
+  left: 250px;
+  bottom: 300px;
+}
+
+@media screen and (max-width: 1200px) {
+  .choose__nftcases #lottie2 {
+    bottom: initial;
+    left: 10%;
+    top: 0;
+  }
+}
+
 .choose__nftcases ul {
   width: 27.77778%;
   margin: auto;
   position: relative;
   padding-top: 150px;
+}
+
+@media screen and (max-width: 1200px) {
+  .choose__nftcases ul {
+    width: 100%;
+    margin-top: 250px;
+  }
 }
 
 .choose__nftcases ul .first {
@@ -1196,6 +1211,12 @@ body {
   border: solid 1px #d500d5;
   width: 700px;
   padding: 15px;
+}
+
+@media screen and (max-width: 1200px) {
+  .choose__nftcases ul .first .cont {
+    width: 100%;
+  }
 }
 
 .choose__nftcases ul .first img {
@@ -1225,6 +1246,12 @@ body {
   border: solid 1px #d500d5;
   width: 700px;
   padding: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .choose__nftcases ul .second .cont, .choose__nftcases ul .third .cont {
+    width: 100%;
+  }
 }
 
 .choose__nftcases ul .second .cont h2, .choose__nftcases ul .third .cont h2 {
@@ -1268,9 +1295,22 @@ body {
   width: 500px;
 }
 
+@media screen and (max-width: 1200px) {
+  .choose__nftcases ul .second {
+    width: 100%;
+  }
+}
+
 .choose__nftcases ul .third {
   margin-left: 50px;
   width: 700px;
+}
+
+@media screen and (max-width: 1200px) {
+  .choose__nftcases ul .third {
+    width: 100%;
+    margin-left: 0px;
+  }
 }
 
 .choose__nftcases ul li {
@@ -1640,8 +1680,26 @@ body {
       justify-content: space-around;
 }
 
+@media screen and (max-width: 1200px) {
+  .choose__package ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .choose__package ul li {
   width: 350px;
+}
+
+@media screen and (max-width: 1200px) {
+  .choose__package ul li {
+    margin-bottom: 50px;
+  }
 }
 
 .choose__package ul li > img {

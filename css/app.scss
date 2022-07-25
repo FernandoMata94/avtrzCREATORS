@@ -625,12 +625,7 @@ body {
   opacity: 1;
 }
 
-#lottie2{
-  width: 400px;
-  position: absolute;
-  left: 250px;
-  bottom: 300px;
-}
+
 
 .create{
   position: relative;
@@ -878,12 +873,26 @@ body {
     max-width: 650px;
     text-transform: capitalize;
   }
-
+  #lottie2{
+    width: 400px;
+    position: absolute;
+    left: 250px;
+    bottom: 300px;
+    @media screen and (max-width: $lg) {
+      bottom: initial;
+      left: 10%;
+      top: 0;
+    }
+  }
   ul{
     width: col(5);
     margin: auto;
     position: relative;
     padding-top: 150px;
+    @media screen and (max-width: $lg) {
+      width: col(18);
+      margin-top: 250px;
+    }
     .first{
       border: none;
       position: absolute;
@@ -899,6 +908,9 @@ body {
         border: solid 1px $darkViolet;
         width: 700px;
         padding: 15px;
+        @media screen and (max-width: $lg) {
+          width: 100%;
+        }
       }
       img{
         position: absolute;
@@ -922,6 +934,9 @@ body {
         border: solid 1px $darkViolet;
         width: 700px;
         padding: 20px;
+        @media screen and (max-width: $lg) {
+          width: 100%;
+        }
         h2{
           @include h2($white,1.2);
           text-transform: capitalize;
@@ -937,10 +952,17 @@ body {
     }
     .second{
       width: 500px;
+      @media screen and (max-width: $lg) {
+        width: 100%;
+      }
     }
     .third{
       margin-left: 50px;
       width: 700px;
+      @media screen and (max-width: $lg) {
+        width: 100%;
+        margin-left: 0px;
+      }
     }
     li{
       margin: 10px 0;
@@ -1161,8 +1183,15 @@ body {
     margin: 50px 0 0 0;
     display: flex;
     justify-content: space-around;
+    @media screen and (max-width: $lg) {
+      flex-direction: column;
+      align-items: center;
+    }
     li{
       width: 350px;
+      @media screen and (max-width: $lg) {
+        margin-bottom: 50px;
+      }
       >img{
         display: block;
         margin: auto;
