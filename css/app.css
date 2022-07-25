@@ -785,6 +785,13 @@ body {
   opacity: 1;
 }
 
+#lottie2 {
+  width: 400px;
+  position: absolute;
+  left: 250px;
+  bottom: 300px;
+}
+
 .create {
   position: relative;
   background-color: #010628;
