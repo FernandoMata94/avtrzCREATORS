@@ -1033,29 +1033,29 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 1550px;
+  width: 100%;
   margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-@media screen and (max-width: 1700px) {
-  .section2 .cont {
-    width: 1400px;
-  }
-}
-
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1200px) {
   .section2 .cont {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
 .section2 .left {
   width: 600px;
-  margin: 20px auto 0 auto;
+  height: 625px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1065,20 +1065,18 @@ body {
   position: relative;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 850px) {
   .section2 .left {
-    height: 700px;
+    width: 450px;
+    height: 430px;
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 580px) {
   .section2 .left {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
     overflow: hidden;
+    width: 300px;
+    height: 330px;
   }
 }
 
@@ -1094,52 +1092,78 @@ body {
 
 .section2 .left .svgcont.one {
   width: 220px;
-  left: -120px;
-  top: 150px;
+  left: -20px;
+  top: 180px;
 }
 
 @media screen and (max-width: 850px) {
   .section2 .left .svgcont.one {
     width: 150px;
-    left: 0;
-    top: 170px;
+    left: -60px;
+    top: 150px;
   }
 }
 
 .section2 .left .svgcont.two {
   width: 220px;
-  right: -120px;
-  top: 150px;
+  right: -100px;
+  top: 180px;
+}
+
+@media screen and (max-width: 850px) {
+  .section2 .left .svgcont.two {
+    width: 150px;
+    right: -60px;
+    top: 180px;
+  }
 }
 
 .section2 .left .svgcont.three {
-  width: 550px;
-  bottom: 120px;
-  left: 50px;
+  width: 500px;
+  bottom: 30px;
+  left: 120px;
 }
 
 @media screen and (max-width: 850px) {
   .section2 .left .svgcont.three {
-    width: 300px;
+    width: 340px;
+    bottom: -10px;
+    left: 70px;
   }
 }
 
 .section2 .left .nftcont {
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
+  position: absolute;
 }
 
-.section2 .left .nftcont:hover {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+.section2 .left .nftcont.one {
+  left: 80px;
+  top: 0;
+}
+
+@media screen and (max-width: 850px) {
+  .section2 .left .nftcont.one {
+    left: 0px;
+  }
+}
+
+.section2 .left .nftcont.two {
+  right: 0;
+  top: 70px;
 }
 
 .section2 .left .nftcont img {
-  width: 300px;
+  width: 280px;
   display: block;
   margin: auto;
+}
+
+@media screen and (max-width: 850px) {
+  .section2 .left .nftcont img {
+    width: 240px;
+  }
 }
 
 .section2 .left .nftcont p {
@@ -1165,19 +1189,6 @@ body {
   position: relative;
 }
 
-@media screen and (max-width: 1400px) {
-  .section2 .right {
-    width: 550px;
-    margin: auto;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .section2 .right {
-    width: 410px;
-  }
-}
-
 .section2 .right .inner__cont {
   position: absolute;
   left: 20px;
@@ -1193,12 +1204,16 @@ body {
   }
 }
 
+.section2 .right .inner__cont p {
+  line-height: 1.5;
+}
+
 .section2 .right .inner__cont p:first-of-type {
   margin-bottom: 15px;
 }
 
 .section2 .right img {
-  width: 550px;
+  width: 480px;
 }
 
 .section1, .section2, .section3, .section4, .section6, .section7, .section9, .section10 {
@@ -1975,18 +1990,18 @@ body {
   z-index: 1;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1200px) {
   .faqs .logo {
-    left: 10%;
+    left: 40%;
+    bottom: 0;
+    top: initial;
     width: 170px;
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 850px) {
   .faqs .logo {
-    left: 0;
-    right: 0;
-    margin: auto;
+    left: 30%;
   }
 }
 
@@ -2005,6 +2020,7 @@ body {
 @media screen and (max-width: 1200px) {
   .faqs .faq {
     margin-top: 200px;
+    margin-bottom: 130px;
   }
 }
 
