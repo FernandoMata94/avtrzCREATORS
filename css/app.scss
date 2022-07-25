@@ -768,7 +768,6 @@ body {
     display: flex;
     width: 1550px;
     margin: auto;
-
     @media screen and (max-width: 1700px) {
       width: 1400px;
     }
@@ -790,6 +789,7 @@ body {
     @media screen and (max-width: $md) {
       flex-direction: column;
       width: 100%;
+      overflow: hidden;
     }
     .svgcont{
       position: absolute;
@@ -803,6 +803,12 @@ body {
         width: 220px;
         left: -120px;
         top: 150px;
+        @media screen and (max-width: $md) {
+          width: 150px;
+          left: 0;
+          top: 170px;
+        }
+
       }
       &.two{
         width: 220px;
@@ -923,6 +929,7 @@ body {
   }
   ul{
     width: col(5);
+    list-style: none;
     margin: auto;
     position: relative;
     padding-top: 150px;

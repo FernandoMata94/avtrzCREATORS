@@ -1078,6 +1078,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 100%;
+    overflow: hidden;
   }
 }
 
@@ -1095,6 +1096,14 @@ body {
   width: 220px;
   left: -120px;
   top: 150px;
+}
+
+@media screen and (max-width: 850px) {
+  .section2 .left .svgcont.one {
+    width: 150px;
+    left: 0;
+    top: 170px;
+  }
 }
 
 .section2 .left .svgcont.two {
@@ -1257,6 +1266,7 @@ body {
 
 .choose__nftcases ul {
   width: 27.77778%;
+  list-style: none;
   margin: auto;
   position: relative;
   padding-top: 150px;
