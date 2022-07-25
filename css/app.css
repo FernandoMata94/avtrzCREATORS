@@ -1019,6 +1019,12 @@ body {
   }
 }
 
+@media screen and (max-width: 850px) {
+  .section2 {
+    padding: 5.55556%;
+  }
+}
+
 .section2 h1 {
   text-align: center;
 }
@@ -1071,6 +1077,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -1100,6 +1107,12 @@ body {
   width: 550px;
   bottom: 120px;
   left: 50px;
+}
+
+@media screen and (max-width: 850px) {
+  .section2 .left .svgcont.three {
+    width: 300px;
+  }
 }
 
 .section2 .left .nftcont {
@@ -1150,11 +1163,25 @@ body {
   }
 }
 
+@media screen and (max-width: 850px) {
+  .section2 .right {
+    width: 410px;
+  }
+}
+
 .section2 .right .inner__cont {
   position: absolute;
   left: 20px;
   top: 30px;
   padding: 25px;
+}
+
+@media screen and (max-width: 850px) {
+  .section2 .right .inner__cont {
+    padding: 5px;
+    left: 20px;
+    top: 30px;
+  }
 }
 
 .section2 .right .inner__cont p:first-of-type {
@@ -1377,33 +1404,29 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
+  padding: 5.55556%;
 }
 
 @media screen and (max-width: 1200px) {
   .tell__story {
     overflow: hidden;
+    height: auto;
   }
 }
 
-.tell__story .container {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100vh;
-  padding: 5.55556%;
-}
-
-.tell__story .container .titlecont {
+.tell__story .titlecont {
   margin: 100px auto 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 @media screen and (max-width: 1200px) {
-  .tell__story .container .titlecont {
+  .tell__story .titlecont {
     margin: 0px auto 50px auto;
   }
 }
 
-.tell__story .container .titlecont h1 {
+.tell__story .titlecont h1 {
   text-align: center;
   margin-right: 5px;
 }
@@ -1457,7 +1480,7 @@ body {
 
 @media screen and (max-width: 1200px) {
   .tell__story .container .div__cont .right {
-    margin-top: 50px;
+    margin-top: 150px;
   }
 }
 
