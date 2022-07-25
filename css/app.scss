@@ -649,9 +649,18 @@ body {
     justify-content: space-between;
     width: col(18);
     align-items: center;
+    @media screen and (max-width: $lg) {
+      flex-direction: column;
+    }
   }
   .left{
     width: col(9);
+    @media screen and (max-width: $lg) {
+      width: col(18);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .inner__cont{
       border: none;
       position: relative;
@@ -683,6 +692,10 @@ body {
       }
 
     }
+    .button{
+      margin: 50px 0 0 0;
+      padding: 5px;
+    }
   }
   .right{
     position: relative;
@@ -691,8 +704,17 @@ body {
       left: 20px;
       top: 30px;
       padding: 25px;
+      @media screen and (max-width: $lg) {
+        position: absolute;
+        left: 40px;
+        top: -10px;
+        padding: 25px;
+      }
       >div{
         margin-bottom: 15px;
+        @media screen and (max-width: $lg) {
+          margin-bottom: 10px;
+        }
         p{
           @include p ($white,.9)
         }
@@ -714,6 +736,9 @@ body {
     width: col(18);
     background-color: $violet;
     padding:10px col(1);
+    @media screen and (max-width: $lg) {
+      position: relative;
+    }
     h2{
       @include h2($white,.8);
       text-align: center;
@@ -989,9 +1014,10 @@ body {
     padding: col(1);
     .titlecont{
       margin:100px auto 0 auto;
-      @media screen and (max-width: $md) {
-        margin:100px auto 100px auto;
+      @media screen and (max-width: $lg) {
+        margin:0px auto 50px auto;
       }
+
       h1{
         text-align: center;
         margin-right: 5px;
@@ -1009,6 +1035,9 @@ body {
       display: flex;
       justify-content: space-around;
       align-items: center;
+      @media screen and (max-width: $lg) {
+        flex-direction: column;
+      }
       .left{
         position: relative;
         .text__cont{
@@ -1023,6 +1052,9 @@ body {
       }
       .right{
         position: relative;
+        @media screen and (max-width: $lg) {
+          margin-top: 50px;
+        }
         .element{
           position: absolute;
           left: 30px;
@@ -1034,6 +1066,9 @@ body {
         }
         .window{
           width: 350px;
+          @media screen and (max-width: $lg) {
+            width: 300px;
+          }
         }
       }
 
@@ -1188,7 +1223,7 @@ body {
       align-items: center;
     }
     li{
-      width: 350px;
+      width: 300px;
       @media screen and (max-width: $lg) {
         margin-bottom: 50px;
       }
@@ -1530,6 +1565,25 @@ body {
     }
   }
   .cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: $lg) {
+      flex-direction: column;
+    }
+  }
+  .left{
+    position: relative;
+    >div{
+      position: absolute;
+      left: 50px;
+      top: 30px;
+    }
+    img{
+      width: 400px;
+    }
+  }
+  .right{
     width: 900px;
     height: 600px;
 
