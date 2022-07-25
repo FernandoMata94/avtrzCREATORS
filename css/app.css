@@ -773,6 +773,18 @@ body {
   width: 20px;
 }
 
+#lottie {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  text-align: center;
+  opacity: 1;
+}
+
 .create {
   position: relative;
   background-color: #010628;
