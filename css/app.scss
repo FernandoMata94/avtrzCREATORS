@@ -564,6 +564,9 @@ body {
     background-color:$darkViolet;
     width: 400px;
     position: relative;
+    @media screen and (max-width: $md) {
+      width: 100%;
+    }
     &:before{
       content: '';
       position: absolute;
@@ -635,6 +638,10 @@ body {
     align-items: center;
     width: col(6);
     margin: auto;
+    @media screen and (max-width: $md) {
+      width: col(18);
+      justify-content: space-around;
+    }
     span{
       width: 20px;
       height: 8px;
@@ -934,6 +941,14 @@ body {
       left: 10%;
       top: 0;
     }
+    @media screen and (max-width: $md) {
+      width: 300px;
+      position: relative;
+      bottom: initial;
+      left: 0;
+      top: 0;
+      margin: auto;
+    }
   }
   ul{
     width: col(5);
@@ -944,6 +959,9 @@ body {
     @media screen and (max-width: $lg) {
       width: col(18);
       margin-top: 250px;
+    }
+    @media screen and (max-width: $md) {
+      margin-top: 0px;
     }
     .first{
       border: none;
@@ -1461,6 +1479,7 @@ body {
     }
     @media screen and (max-width: $md) {
       width: col(15);
+      margin-top: 0px;
     }
     li{
       border: 1px solid $violet;
@@ -1517,7 +1536,7 @@ body {
   background-color: $purple;
   position: relative;
   z-index: 1;
-  padding: col(1) 0;
+  padding: col(1);
   .top{
     display: flex;
     width: col(9);
@@ -1526,6 +1545,7 @@ body {
     margin-bottom: 50px;
     @media screen and (max-width: $md) {
       flex-direction: column;
+      width: col(18);
     }
     .left{
       width: col(9);
@@ -1544,6 +1564,18 @@ body {
         right: -100px;
         top: 40%;
         width: 50px;
+        &.logo{
+          @media screen and (max-width: $md) {
+            display: none;
+          }
+        }
+        &.cascovioleta{
+          display: block;
+          position: relative;
+          margin: auto;
+          right: initial;
+          top: initial;
+        }
       }
     }
   }

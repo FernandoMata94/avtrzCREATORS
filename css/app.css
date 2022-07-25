@@ -703,6 +703,12 @@ body {
   position: relative;
 }
 
+@media screen and (max-width: 850px) {
+  .sectiontest .bottomleft {
+    width: 100%;
+  }
+}
+
 .sectiontest .bottomleft:before {
   content: '';
   position: absolute;
@@ -801,6 +807,14 @@ body {
           align-items: center;
   width: 33.33333%;
   margin: auto;
+}
+
+@media screen and (max-width: 850px) {
+  .create .title__cont {
+    width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 
 .create .title__cont span {
@@ -1279,6 +1293,17 @@ body {
   }
 }
 
+@media screen and (max-width: 850px) {
+  .choose__nftcases #lottie2 {
+    width: 300px;
+    position: relative;
+    bottom: initial;
+    left: 0;
+    top: 0;
+    margin: auto;
+  }
+}
+
 .choose__nftcases ul {
   width: 27.77778%;
   list-style: none;
@@ -1291,6 +1316,12 @@ body {
   .choose__nftcases ul {
     width: 100%;
     margin-top: 250px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .choose__nftcases ul {
+    margin-top: 0px;
   }
 }
 
@@ -2134,6 +2165,7 @@ body {
 @media screen and (max-width: 850px) {
   .faqs .faq {
     width: 83.33333%;
+    margin-top: 0px;
   }
 }
 
@@ -2201,7 +2233,7 @@ body {
   background-color: #010628;
   position: relative;
   z-index: 1;
-  padding: 5.55556% 0;
+  padding: 5.55556%;
 }
 
 .meet__carlos .top {
@@ -2222,6 +2254,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -2251,6 +2284,20 @@ body {
   right: -100px;
   top: 40%;
   width: 50px;
+}
+
+@media screen and (max-width: 850px) {
+  .meet__carlos .top .right img.logo {
+    display: none;
+  }
+}
+
+.meet__carlos .top .right img.cascovioleta {
+  display: block;
+  position: relative;
+  margin: auto;
+  right: initial;
+  top: initial;
 }
 
 .meet__carlos h1 {
