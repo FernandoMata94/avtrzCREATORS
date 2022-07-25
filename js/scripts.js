@@ -218,70 +218,10 @@ $('#switch3').click(function () {
 
 
 
-////////////////////////////////////
-
-var image = document.getElementById("image");
-var currentPos = 0;
-var images = ["img/section4/Avatar1.svg", "img/section4/Avatar2.svg", "img/section4/Avatar3.svg"]
-
-function volgendefoto() {
-    if (++currentPos >= images.length)
-        currentPos = 0;
-
-    image.src = images[currentPos];
-}
-
-setInterval(volgendefoto, 3000);
 
 /////////////////////////// 3js
 
 
-//funcion para rotar el slider 3D
-let current_rotation3 = 0;
-let current_rotation4 = 0;
-
-function rotar3(){
-  current_rotation3 += 120;
-  document.querySelector(".content-carrousel").style.transform =
-    "rotateY(" + current_rotation3 + "deg)";
-}
-
- function rotar4(){
-    current_rotation4 += 90;
-    document.querySelector("#carrusel4").style.transform =
-    "rotateY(" + current_rotation4 + "deg)";
- }
-
- $(".test3").click(function () {
-  current_rotation3 += 120;
-  document.querySelector(".content-carrousel").style.transform =
-    "rotateY(" + current_rotation3 + "deg)";
-});
-
-$(".test4").click(function () {
-  current_rotation4 += 90;
-  document.querySelector("#carrusel4").style.transform =
-    "rotateY(" + current_rotation4 + "deg)";
-});
-
-//cada 2 segundos ejecuta la funcion
-var intervalId = window.setInterval(function(){
-  rotar3()
-  rotar4()
-}, 2000);
-
-//hover al mouse detiene la animaicion
-$('.content-carrousel , #carrusel4').on('mouseenter',function(){
-  clearTimeout(intervalId);
-});
-
-//empieza timeout again cuando el mouse sale
-$('.content-carrousel , #carrusel4').on('mouseleave',function(){
-  intervalId = window.setInterval(function(){
-    rotar3()
-    rotar4()
-  }, 2000);
-});
 
 
 /////////////////////////// modal
@@ -344,18 +284,7 @@ resizeMenn()
 
 
 /////////////////////////// TYPED JS
-/* var typed = new Typed('.element', {
-  strings: ["A) INFLUENCERS", "B) INSTAGRAMERS","C) YOUTUBERS", "D) TIKTOKERS", "E) STREAMERS","F) MUSICIANS","G) AUTHORS","H) PODCASTERS","I) AND MORE." ],
-  typeSpeed: 30,
-  backSpeed: 30,
-  startDelay: 1200,
-  showCursor: false,
 
-  cursorChar: "|",
-  loop: true,
-  loopCount: 5
-});
- */
 if ($(".text-slider").length == 1) {
   var typed_strings = $(".text-slider-items").text();
   var typed = new Typed(".text-slider", {
