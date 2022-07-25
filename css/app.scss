@@ -1048,23 +1048,13 @@ body {
     }
   }
   .container{
-
-
-    .fondo{
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 1;
-    }
-
     .div__cont{
       display: flex;
       justify-content: space-around;
       align-items: center;
       width: 1200px;
       height: 600px;
-      //background-color: rgb(255, 157, 157);
+      background-color: rgb(255, 157, 157);
       position: relative;
       z-index: 2;
       margin: auto;
@@ -1076,6 +1066,7 @@ body {
       }
       @media screen and (max-width: $md) {
         width: 500px;
+        height: 900px;
         flex-direction: column;
       }
       @media screen and (max-width: $sm) {
@@ -1092,16 +1083,51 @@ body {
           top: 20px;
           left: 580px;
           width: 400px;
+          @media screen and (max-width: $lap) {
+            top: 40px;
+            left: 535px;
+            width: 340px;
+          }
+          @media screen and (max-width: $md) {
+            top: 420px;
+            left: 210px;
+            width: 340px;
+            transform: rotate(90deg);
+          }
         }
         &.two{
           top: 220px;
           left: 512px;
           width: 324px;
+          @media screen and (max-width: $lap) {
+            top: 220px;
+            left: 506px;
+            width: 137px;
+          }
+          @media screen and (max-width: $lap) {
+            top: 340px;
+            left: 100px;
+            width: 220px;
+            transform: rotate(90deg);
+          }
+
         }
         &.three{
           bottom: 40px;
           left: 542px;
           width: 324px;
+          @media screen and (max-width: $lap) {
+            bottom: 40px;
+            left: 492px;
+            width: 324px;
+          }
+          @media screen and (max-width: $md) {
+            left: -410px;
+          top: -10px;
+          width: 280px;
+          transform: rotate(90deg);
+          }
+
         }
       }
       .left{
@@ -1114,13 +1140,13 @@ body {
         }
         img{
           width: 500px;
+          @media screen and (max-width: $md) {
+            width: 440px;
+          }
         }
       }
       .right{
         position: relative;
-        @media screen and (max-width: $lg) {
-          margin-top: 150px;
-        }
         .element{
           position: absolute;
           left: 30px;
@@ -1138,6 +1164,13 @@ body {
         }
       }
 
+    }
+    .fondo{
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
     }
   }
 
