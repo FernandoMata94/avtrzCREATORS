@@ -748,6 +748,9 @@ body {
     .button{
       margin: 25px auto 0 auto;
       padding: 5px;
+      @media screen and (max-width: $md) {
+        display: none;
+      }
     }
   }
   .right{
@@ -760,10 +763,11 @@ body {
     @media screen and (max-width: $lg) {
       height: 650px;
     }
-    @media screen and (max-width: $sm) {
-      height: 650px;
+    @media screen and (max-width: $ms) {
+      height: 500px;
       width: 100%;
     }
+
     .cont{
       margin-top: 20px;
       margin-left: 10px;
@@ -810,6 +814,12 @@ body {
       text-align: center;
       letter-spacing: 2px;
       text-transform: initial;
+    }
+  }
+  .responsive{
+    display: none;
+    @media screen and (max-width: $md) {
+      display: block;
     }
   }
 }

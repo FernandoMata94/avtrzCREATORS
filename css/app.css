@@ -987,6 +987,12 @@ body {
   padding: 5px;
 }
 
+@media screen and (max-width: 850px) {
+  .create .left .button {
+    display: none;
+  }
+}
+
 .create .right {
   position: relative;
   width: 400px;
@@ -1097,6 +1103,16 @@ body {
 @media screen and (max-width: 580px) {
   .create .list h2 {
     font-size: 1.2rem;
+  }
+}
+
+.create .responsive {
+  display: none;
+}
+
+@media screen and (max-width: 850px) {
+  .create .responsive {
+    display: block;
   }
 }
 
