@@ -2192,6 +2192,7 @@ body {
   right: -20%;
   top: 0;
   width: 700px;
+  pointer-events: none;
 }
 
 .faqs h1 {
@@ -2371,11 +2372,17 @@ body {
 }
 
 .meet__carlos .top .right img.cascovioleta {
-  display: block;
+  display: none;
   position: relative;
   margin: auto;
   right: initial;
   top: initial;
+}
+
+@media screen and (max-width: 850px) {
+  .meet__carlos .top .right img.cascovioleta {
+    display: block;
+  }
 }
 
 .meet__carlos h1 {

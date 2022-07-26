@@ -1502,6 +1502,7 @@ body {
     right: -20%;
     top: 0;
     width: 700px;
+    pointer-events: none;
   }
   h1{
     text-align: center;
@@ -1630,11 +1631,15 @@ body {
           }
         }
         &.cascovioleta{
-          display: block;
+          display: none;
+
           position: relative;
           margin: auto;
           right: initial;
           top: initial;
+          @media screen and (max-width: $md) {
+            display: block;
+          }
         }
       }
     }
