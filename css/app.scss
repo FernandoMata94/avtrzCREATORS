@@ -696,8 +696,8 @@ body {
         left: 460px;
         width: 240px;
       }
-      @media screen and (max-width: $lg) {
-        left: 0px;
+      @media screen and (max-width: $md) {
+        display: none;
       }
       polyline, line,path{
         stroke-dasharray: 3;

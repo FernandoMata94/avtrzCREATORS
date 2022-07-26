@@ -905,9 +905,9 @@ body {
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 850px) {
   .create .container .svgcont {
-    left: 0px;
+    display: none;
   }
 }
 
