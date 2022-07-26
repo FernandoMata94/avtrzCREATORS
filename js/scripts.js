@@ -288,7 +288,7 @@ resizeMenn()
 if ($(".text-slider").length == 1) {
   var typed_strings = $(".text-slider-items").text();
   var typed = new Typed(".text-slider", {
-    strings: ["A) INFLUENCERS", "B) INSTAGRAMERS","C) YOUTUBERS", "D) TIKTOKERS", "E) STREAMERS","F) MUSICIANS","G) AUTHORS","H) PODCASTERS","I) AND MORE." ],
+    strings: ["INFLUENCERS", "INSTAGRAMERS","YOUTUBERS", "TIKTOKERS", "STREAMERS","MUSICIANS","AUTHORS","PODCASTERS","AND MORE." ],
     typeSpeed: 50,
       loop: true,
       backDelay: 900,
