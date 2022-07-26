@@ -1803,8 +1803,9 @@ body {
       }
       &.one{
         position: absolute;
-        left: 490px;
-        top: 90px;
+        left: 35%;
+        top: 24%;
+        transform: rotate(115deg);
         @media screen and (max-width: $lg) {
           left: 280px;
           top: 160px;
@@ -1874,10 +1875,25 @@ body {
       }
       &.six{
         position: absolute;
-        bottom: 0;
+
         width: 60px;
-        right: 180px;
-        bottom: 230px;
+
+        right: 239px;
+        bottom: 180px;
+        @media screen and (max-width: $lg) {
+          right: 130px;
+          bottom: 250px;
+        }
+        @media screen and (max-width: $md) {
+          right: 60px;
+          bottom: 167px;
+        }
+      }
+      &.seven{
+        position: absolute;
+        width: 60px;
+        right: 150px;
+        bottom: 280px;
         @media screen and (max-width: $lg) {
           right: 130px;
           bottom: 250px;
@@ -1932,9 +1948,10 @@ body {
       }
     }
     .webpage{
+
       position: absolute;
-      right: 5%;
-      bottom: 20%;
+      right: 13%;
+      bottom: 10%;
       @media screen and (max-width: $lg) {
         right: 0;
         bottom: 20%;
@@ -1945,8 +1962,8 @@ body {
     }
     .discord{
       position: absolute;
-      right: 40%;
-      bottom: 0;
+      right: 0;
+      bottom: 35%;
       @media screen and (max-width: $lg) {
         right: 40%;
         bottom: 50px;
@@ -1969,6 +1986,11 @@ body {
         bottom: 0;
       }
     }
+    .nftpass{
+      position: absolute;
+      right: 40%;
+      bottom: 5%;
+    }
     .base{
       width: 500px;
       position: absolute;
@@ -1981,6 +2003,7 @@ body {
         width: 200px;
       }
     }
+
   }
 }
 

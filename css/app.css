@@ -2605,8 +2605,10 @@ body {
 
 .section12 .right .svgcont.one {
   position: absolute;
-  left: 490px;
-  top: 90px;
+  left: 35%;
+  top: 24%;
+  -webkit-transform: rotate(115deg);
+          transform: rotate(115deg);
 }
 
 @media screen and (max-width: 1200px) {
@@ -2711,10 +2713,9 @@ body {
 
 .section12 .right .svgcont.six {
   position: absolute;
-  bottom: 0;
   width: 60px;
-  right: 180px;
-  bottom: 230px;
+  right: 239px;
+  bottom: 180px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -2726,6 +2727,27 @@ body {
 
 @media screen and (max-width: 850px) {
   .section12 .right .svgcont.six {
+    right: 60px;
+    bottom: 167px;
+  }
+}
+
+.section12 .right .svgcont.seven {
+  position: absolute;
+  width: 60px;
+  right: 150px;
+  bottom: 280px;
+}
+
+@media screen and (max-width: 1200px) {
+  .section12 .right .svgcont.seven {
+    right: 130px;
+    bottom: 250px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .section12 .right .svgcont.seven {
     right: 60px;
     bottom: 167px;
   }
@@ -2792,8 +2814,8 @@ body {
 
 .section12 .right .webpage {
   position: absolute;
-  right: 5%;
-  bottom: 20%;
+  right: 13%;
+  bottom: 10%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -2811,8 +2833,8 @@ body {
 
 .section12 .right .discord {
   position: absolute;
-  right: 40%;
-  bottom: 0;
+  right: 0;
+  bottom: 35%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -2847,6 +2869,12 @@ body {
     left: 0;
     bottom: 0;
   }
+}
+
+.section12 .right .nftpass {
+  position: absolute;
+  right: 40%;
+  bottom: 5%;
 }
 
 .section12 .right .base {
