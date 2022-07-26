@@ -884,6 +884,12 @@ body {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .create .container .svgcont {
+    left: 0px;
+  }
+}
+
 .create .container .svgcont polyline, .create .container .svgcont line, .create .container .svgcont path {
   stroke-dasharray: 3;
   -webkit-animation: dash 5s linear infinite;

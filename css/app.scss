@@ -683,6 +683,9 @@ body {
         left: 460px;
         width: 140px;
       }
+      @media screen and (max-width: $lg) {
+        left: 0px;
+      }
       polyline, line,path{
         stroke-dasharray: 3;
         animation: dash 5s linear infinite;
