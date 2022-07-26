@@ -1099,7 +1099,8 @@ body {
     height: auto;
   }
   .titlecont{
-    margin:100px auto 0 auto;
+    margin: auto;
+    //margin:100px auto 0 auto;
     position: relative;
     z-index: 1;
     @media screen and (max-width: $lg) {
@@ -1115,19 +1116,19 @@ body {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      width: 1200px;
+      width: 1400px;
       height: 600px;
       //background-color: rgb(255, 157, 157);
       position: relative;
       z-index: 2;
       margin: auto;
+      @media screen and (max-width: $max) {
+        width: 1200px;
+      }
       @media screen and (max-width: $lap) {
-        width: 1000px;
+        width: 1100px;
       }
       @media screen and (max-width: $lg) {
-        width: 800px;
-      }
-      @media screen and (max-width: $md) {
         width: 500px;
         height: 900px;
         flex-direction: column;
@@ -1144,51 +1145,62 @@ body {
         }
         &.one{
           top: 20px;
-          left: 580px;
+          left: 640px;
           width: 400px;
-          @media screen and (max-width: $lap) {
-            top: 40px;
-            left: 535px;
-            width: 340px;
+          @media screen and (max-width: $max) {
+            top: 25px;
+            left: 585px;
+            width: 360px;
           }
-          @media screen and (max-width: $md) {
-            top: 420px;
-            left: 210px;
-            width: 340px;
+          @media screen and (max-width: $lg) {
+            top: 47%;
+            left: 50%;
+            width: 260px;
             transform: rotate(90deg);
           }
         }
         &.two{
           top: 220px;
-          left: 512px;
-          width: 324px;
-          @media screen and (max-width: $lap) {
+          left: 565px;
+          width: 410px;
+          @media screen and (max-width: $max) {
             top: 220px;
-            left: 506px;
-            width: 137px;
+            left: 525px;
+            width: 300px;
           }
           @media screen and (max-width: $lap) {
+            top: 280px;
+            left: 520px;
+            width: 210px;
+          }
+          @media screen and (max-width: $lg) {
             top: 340px;
-            left: 100px;
-            width: 220px;
+            left: 150px;
+            width: 190px;
             transform: rotate(90deg);
           }
 
         }
         &.three{
-          bottom: 40px;
-          left: 542px;
-          width: 324px;
-          @media screen and (max-width: $lap) {
-            bottom: 40px;
-            left: 492px;
-            width: 324px;
+          bottom: 30px;
+          left: 600px;
+          width: 390px;
+          @media screen and (max-width: $max) {
+            bottom: 30px;
+            left: 535px;
+            width: 390px;
           }
-          @media screen and (max-width: $md) {
+          @media screen and (max-width: $lap) {
+            bottom: 30px;
+            left: 535px;
+            width: 390px;
+
+          }
+          @media screen and (max-width: $lg) {
             left: -410px;
-          top: -10px;
-          width: 280px;
-          transform: rotate(90deg);
+            top: -10px;
+            width: 280px;
+            transform: rotate(90deg);
           }
 
         }
