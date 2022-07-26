@@ -795,7 +795,14 @@ body {
   position: relative;
   background-color: #010628;
   z-index: 1;
+  height: 100vh;
   padding: 5.55556% 5.55556% 150px 5.55556%;
+}
+
+@media screen and (max-width: 1200px) {
+  .create {
+    height: auto;
+  }
 }
 
 .create .title__cont {
@@ -861,26 +868,40 @@ body {
   }
 }
 
-.create .container .svgcont {
-  width: 400px;
+.create .container #lottie1 {
   position: absolute;
-  bottom: 220px;
-  left: 470px;
+  left: 0;
+  top: 0;
+  width: 500px;
+}
+
+@media screen and (max-width: 1200px) {
+  .create .container #lottie1 {
+    position: relative;
+    width: 100%;
+  }
+}
+
+.create .container .svgcont {
+  width: 550px;
+  position: absolute;
+  bottom: 280px;
+  left: 450px;
 }
 
 @media screen and (max-width: 1600px) {
   .create .container .svgcont {
-    bottom: 220px;
+    bottom: 270px;
     left: 460px;
-    width: 240px;
+    width: 340px;
   }
 }
 
 @media screen and (max-width: 1400px) {
   .create .container .svgcont {
-    bottom: 220px;
+    bottom: 300px;
     left: 460px;
-    width: 140px;
+    width: 240px;
   }
 }
 
@@ -894,10 +915,6 @@ body {
   stroke-dasharray: 3;
   -webkit-animation: dash 5s linear infinite;
           animation: dash 5s linear infinite;
-}
-
-.create .left {
-  width: 50%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -940,7 +957,7 @@ body {
 
 .create .left .inner__cont .purple__bordercont p {
   font-family: "BlinkerExtraLight";
-  font-size: 1.625rem;
+  font-size: 1.375rem;
   color: #ffffff;
   margin: 0;
   font-weight: normal;
@@ -954,7 +971,7 @@ body {
 
 @media screen and (max-width: 850px) {
   .create .left .inner__cont .purple__bordercont p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -966,13 +983,13 @@ body {
 }
 
 .create .left .button {
-  margin: 50px 0 0 0;
+  margin: 25px auto 0 auto;
   padding: 5px;
 }
 
 .create .right {
   position: relative;
-  width: 500px;
+  width: 400px;
   height: 620px;
   background-image: url(../img/create/purple_border.svg);
   background-repeat: no-repeat;
@@ -1019,17 +1036,18 @@ body {
 
 .create .right .cont > div p {
   font-family: "BlinkerExtraLight";
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #ffffff;
   margin: 0;
   font-weight: normal;
   letter-spacing: 1px;
   line-height: 2;
+  line-height: 1.5;
 }
 
 @media screen and (max-width: 850px) {
   .create .right .cont > div p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -1111,9 +1129,16 @@ body {
   display: flex;
   width: 100%;
   margin: auto;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media screen and (max-width: 1400px) {
+  .section2 .cont {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -1267,8 +1292,8 @@ body {
 
 .section2 .right .inner__cont {
   position: absolute;
-  left: 20px;
-  top: 30px;
+  left: 0px;
+  top: 40px;
   padding: 25px;
 }
 
@@ -1281,7 +1306,21 @@ body {
 }
 
 .section2 .right .inner__cont p {
-  line-height: 1.5;
+  font-family: "BlinkerExtraLight";
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 2;
+  line-height: 1.2 !important;
+  text-align: justify;
+}
+
+@media screen and (max-width: 850px) {
+  .section2 .right .inner__cont p {
+    font-size: 0.8rem;
+  }
 }
 
 .section2 .right .inner__cont p:first-of-type {
@@ -1289,7 +1328,7 @@ body {
 }
 
 .section2 .right img {
-  width: 480px;
+  width: 400px;
 }
 
 .section1, .section2, .section3, .section4, .section6, .section7, .section9, .section10 {
