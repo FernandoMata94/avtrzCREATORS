@@ -831,10 +831,19 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100% !important;
+  margin: auto;
+  background-color: pink;
+  position: relative;
+}
+
+@media screen and (max-width: 1400px) {
+  .create .container {
+    width: 1100px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -844,6 +853,35 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+}
+
+.create .container .svgcont {
+  width: 400px;
+  position: absolute;
+  bottom: 220px;
+  left: 470px;
+}
+
+@media screen and (max-width: 1600px) {
+  .create .container .svgcont {
+    bottom: 220px;
+    left: 460px;
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .create .container .svgcont {
+    bottom: 220px;
+    left: 460px;
+    width: 200px;
+  }
+}
+
+.create .container .svgcont polyline, .create .container .svgcont line, .create .container .svgcont path {
+  stroke-dasharray: 3;
+  -webkit-animation: dash 5s linear infinite;
+          animation: dash 5s linear infinite;
 }
 
 .create .left {

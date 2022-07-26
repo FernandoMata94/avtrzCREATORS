@@ -652,10 +652,37 @@ body {
   .container{
     display: flex;
     justify-content: space-between;
-    width: col(18);
     align-items: center;
+    width: 100% !important;
+    margin: auto;
+    //background-color: pink;
+    position: relative;
+    @media screen and (max-width: $lap) {
+      width: 1100px;
+    }
+
     @media screen and (max-width: $lg) {
       flex-direction: column;
+    }
+    .svgcont{
+      width: 400px;
+      position: absolute;
+      bottom: 220px;
+      left: 470px;
+      @media screen and (max-width: $max) {
+        bottom: 220px;
+        left: 460px;
+        width: 350px;
+      }
+      @media screen and (max-width: $lap) {
+        bottom: 220px;
+        left: 460px;
+        width: 200px;
+      }
+      polyline, line,path{
+        stroke-dasharray: 3;
+        animation: dash 5s linear infinite;
+      }
     }
   }
   .left{
@@ -666,6 +693,7 @@ body {
       flex-direction: column;
       align-items: center;
     }
+
     .inner__cont{
       border: none;
       position: relative;
@@ -709,6 +737,7 @@ body {
       left: 20px;
       top: 30px;
       padding: 25px;
+
       @media screen and (max-width: $lg) {
         position: absolute;
         left: 40px;
