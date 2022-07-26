@@ -1170,6 +1170,7 @@ body {
   .section2 .left {
     width: 450px;
     height: 430px;
+    display: none;
   }
 }
 
@@ -1286,6 +1287,17 @@ body {
   }
 }
 
+.section2 .responsive {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .section2 .responsive {
+    display: block;
+    width: 100%;
+  }
+}
+
 .section2 .right {
   position: relative;
 }
@@ -1299,8 +1311,8 @@ body {
 
 @media screen and (max-width: 850px) {
   .section2 .right .inner__cont {
-    padding: 5px;
-    left: 20px;
+    padding: 15px;
+    left: 0px;
     top: 30px;
   }
 }
@@ -1329,6 +1341,12 @@ body {
 
 .section2 .right img {
   width: 400px;
+}
+
+@media screen and (max-width: 850px) {
+  .section2 .right img {
+    width: 300px;
+  }
 }
 
 .section1, .section2, .section3, .section4, .section6, .section7, .section9, .section10 {

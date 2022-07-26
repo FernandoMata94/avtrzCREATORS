@@ -854,6 +854,7 @@ body {
     @media screen and (max-width: $md) {
       width: 450px;
       height: 430px;
+      display: none;
     }
     @media screen and (max-width: $sm) {
       overflow: hidden;
@@ -929,6 +930,13 @@ body {
       }
     }
   }
+  .responsive{
+    display: none;
+    @media screen and (max-width: $lg) {
+      display: block;
+      width: 100%;
+    }
+  }
   .right{
     position: relative;
     .inner__cont{
@@ -937,8 +945,8 @@ body {
       top: 40px;
       padding: 25px;
       @media screen and (max-width: $md) {
-        padding: 5px;
-        left: 20px;
+        padding: 15px;
+        left: 0px;
         top: 30px;
       }
       p{
@@ -953,6 +961,9 @@ body {
     }
     img{
       width: 400px;
+      @media screen and (max-width: $md) {
+        width: 300px;
+      }
     }
   }
 }
