@@ -1807,12 +1807,13 @@ body {
         top: 24%;
         transform: rotate(115deg);
         @media screen and (max-width: $lg) {
-          left: 280px;
-          top: 160px;
+          left: 190px;
+          top: 200px;
         }
         @media screen and (max-width: $md) {
-          left: 150px;
-          top: 70px;
+          left: 120px;
+          top: 130px;
+          transform: rotate(45deg);
         }
       }
       &.two{
@@ -1896,11 +1897,13 @@ body {
         bottom: 280px;
         @media screen and (max-width: $lg) {
           right: 130px;
-          bottom: 250px;
+          bottom: 410px;
+          transform: rotate(115deg);
         }
         @media screen and (max-width: $md) {
           right: 60px;
-          bottom: 167px;
+          bottom: 130px;
+          transform: rotate(45deg);
         }
       }
     }
@@ -1957,7 +1960,9 @@ body {
         bottom: 20%;
       }
       @media screen and (max-width: $md) {
-        bottom: 70px;
+        bottom: 120px;
+        width: 100px;
+        right: -20px;
       }
     }
     .discord{
@@ -1965,11 +1970,11 @@ body {
       right: 0;
       bottom: 35%;
       @media screen and (max-width: $lg) {
-        right: 40%;
-        bottom: 50px;
+        right: 0px;
+        bottom: 390px;
       }
       @media screen and (max-width: $md) {
-        right: 30%;
+        right: 0;
         bottom: 0;
       }
     }

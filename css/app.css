@@ -2613,15 +2613,17 @@ body {
 
 @media screen and (max-width: 1200px) {
   .section12 .right .svgcont.one {
-    left: 280px;
-    top: 160px;
+    left: 190px;
+    top: 200px;
   }
 }
 
 @media screen and (max-width: 850px) {
   .section12 .right .svgcont.one {
-    left: 150px;
-    top: 70px;
+    left: 120px;
+    top: 130px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
   }
 }
 
@@ -2742,14 +2744,18 @@ body {
 @media screen and (max-width: 1200px) {
   .section12 .right .svgcont.seven {
     right: 130px;
-    bottom: 250px;
+    bottom: 410px;
+    -webkit-transform: rotate(115deg);
+            transform: rotate(115deg);
   }
 }
 
 @media screen and (max-width: 850px) {
   .section12 .right .svgcont.seven {
     right: 60px;
-    bottom: 167px;
+    bottom: 130px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
   }
 }
 
@@ -2827,7 +2833,9 @@ body {
 
 @media screen and (max-width: 850px) {
   .section12 .right .webpage {
-    bottom: 70px;
+    bottom: 120px;
+    width: 100px;
+    right: -20px;
   }
 }
 
@@ -2839,14 +2847,14 @@ body {
 
 @media screen and (max-width: 1200px) {
   .section12 .right .discord {
-    right: 40%;
-    bottom: 50px;
+    right: 0px;
+    bottom: 390px;
   }
 }
 
 @media screen and (max-width: 850px) {
   .section12 .right .discord {
-    right: 30%;
+    right: 0;
     bottom: 0;
   }
 }
