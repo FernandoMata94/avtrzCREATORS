@@ -795,7 +795,7 @@ body {
   position: relative;
   background-color: #010628;
   z-index: 1;
-  padding: 5.55556%;
+  padding: 5.55556% 5.55556% 150px 5.55556%;
 }
 
 .create .title__cont {
@@ -834,9 +834,15 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100% !important;
+  width: 1400px;
   margin: auto;
   position: relative;
+}
+
+@media screen and (max-width: 1600px) {
+  .create .container {
+    width: 1200px;
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -851,6 +857,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -865,7 +872,7 @@ body {
   .create .container .svgcont {
     bottom: 220px;
     left: 460px;
-    width: 350px;
+    width: 240px;
   }
 }
 
@@ -873,7 +880,7 @@ body {
   .create .container .svgcont {
     bottom: 220px;
     left: 460px;
-    width: 200px;
+    width: 140px;
   }
 }
 
@@ -959,12 +966,29 @@ body {
 
 .create .right {
   position: relative;
+  width: 500px;
+  height: 620px;
+  background-image: url(../img/create/purple_border.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media screen and (max-width: 1200px) {
+  .create .right {
+    height: 650px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .create .right {
+    height: 650px;
+    width: 100%;
+  }
 }
 
 .create .right .cont {
-  position: absolute;
-  left: 20px;
-  top: 30px;
+  margin-top: 20px;
+  margin-left: 10px;
   padding: 25px;
 }
 
@@ -1010,6 +1034,7 @@ body {
 
 .create .right img {
   width: 500px;
+  display: none;
 }
 
 .create .list {
@@ -1019,12 +1044,6 @@ body {
   width: 100%;
   background-color: #d500d5;
   padding: 10px 5.55556%;
-}
-
-@media screen and (max-width: 1200px) {
-  .create .list {
-    position: relative;
-  }
 }
 
 .create .list h2 {

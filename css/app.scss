@@ -632,7 +632,7 @@ body {
   position: relative;
   background-color: $purple;
   z-index: 1;
-  padding: col(1);
+  padding:  col(1) col(1) 150px col(1);
   .title__cont{
     display: flex;
     align-items: center;
@@ -653,16 +653,20 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100% !important;
+    width: 1400px;
+    //background-color: pink;
     margin: auto;
-   
+
     position: relative;
+    @media screen and (max-width: $max) {
+      width: 1200px;
+    }
     @media screen and (max-width: $lap) {
       width: 1100px;
     }
-
     @media screen and (max-width: $lg) {
       flex-direction: column;
+      width: 100%;
     }
     .svgcont{
       width: 400px;
@@ -672,12 +676,12 @@ body {
       @media screen and (max-width: $max) {
         bottom: 220px;
         left: 460px;
-        width: 350px;
+        width: 240px;
       }
       @media screen and (max-width: $lap) {
         bottom: 220px;
         left: 460px;
-        width: 200px;
+        width: 140px;
       }
       polyline, line,path{
         stroke-dasharray: 3;
@@ -732,12 +736,23 @@ body {
   }
   .right{
     position: relative;
-    .cont{
-      position: absolute;
-      left: 20px;
-      top: 30px;
-      padding: 25px;
+    width: 500px;
+    height: 620px;
+    background-image: url(../img/create/purple_border.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media screen and (max-width: $lg) {
+      height: 650px;
 
+    }
+    @media screen and (max-width: $sm) {
+      height: 650px;
+      width: 100%;
+    }
+    .cont{
+      margin-top: 20px;
+      margin-left: 10px;
+      padding: 25px;
       @media screen and (max-width: $lg) {
         position: absolute;
         left: 40px;
@@ -761,6 +776,7 @@ body {
 
     img{
       width: 500px;
+      display: none;
     }
   }
   .list{
@@ -771,7 +787,7 @@ body {
     background-color: $violet;
     padding:10px col(1);
     @media screen and (max-width: $lg) {
-      position: relative;
+      //position: relative;
     }
     h2{
       @include h2($white,.8);
